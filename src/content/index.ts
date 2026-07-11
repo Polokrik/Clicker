@@ -1,0 +1,72 @@
+import { PackSchema, VeinSchema, type Pack, type Vein } from './schema'
+
+/**
+ * Chargement statique des packs de contenu (§8) : chaque pack est un dossier
+ * `packs/<id>/` avec un `pack.json` (manifeste) et `veins/*.json` (une veine
+ * par fichier). Tout est validé par Zod au chargement — une erreur de contenu
+ * casse au démarrage, pas en pleine partie.
+ */
+
+const manifestModules = import.meta.glob('./packs/*/pack.json', {
+  eager: true,
+  import: 'default',
+})
+const veinModules = import.meta.glob('./packs/*/veins/*.json', {
+  eager: true,
+  import: 'default',
+})
+
+function packIdFromPath(path: string): string {
+  const match = path.match(/packs\/([^/]+)\//)
+  if (!match) throw new Error(`Chemin de pack invalide : ${path}`)
+  return match[1]
+}
+
+export function loadPacks(): Record<string, Pack> {
+  const packs: Record<string, Pack> = {}
+
+  for (const [path, raw] of Object.entries(manifestModules)) {
+    const manifest = PackSchema.parse(raw)
+    packs[packIdFromPath(path)] = { ...manifest, veins: {}, items: {} }
+  }
+
+  for (const [path, raw] of Object.entries(veinModules)) {
+    const packId = packIdFromPath(path)
+    const pack = packs[packId]
+    if (!pack) throw new Error(`Veine sans pack : ${path}`)
+    const vein: Vein = VeinSchema.parse(raw)
+    pack.veins[vein.id] = vein
+    for (const item of vein.items) {
+      if (pack.items[item.id]) {
+        throw new Error(`Item dupliqué « ${item.id} » dans le pack ${packId}`)
+      }
+      pack.items[item.id] = { ...item, vein: vein.id }
+    }
+  }
+
+  // Cohérence : toutes les veines des filons existent, prérequis connus.
+  for (const pack of Object.values(packs)) {
+    for (const filon of pack.filons) {
+      for (const veinId of filon.veins) {
+        if (!pack.veins[veinId]) {
+          throw new Error(`Filon ${filon.id} : veine inconnue « ${veinId} »`)
+        }
+      }
+    }
+    for (const vein of Object.values(pack.veins)) {
+      for (const p of vein.prereq) {
+        if (!pack.veins[p]) {
+          throw new Error(`Veine ${vein.id} : prérequis inconnu « ${p} »`)
+        }
+      }
+    }
+  }
+
+  return packs
+}
+
+export const packs = loadPacks()
+
+/** Pack actif au lancement. Deviendra un réglage quand d'autres packs existeront. */
+export const DEFAULT_PACK_ID = 'fr-en'
+export const activePack: Pack = packs[DEFAULT_PACK_ID]

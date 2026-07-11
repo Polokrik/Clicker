@@ -1,0 +1,68 @@
+import { get, set } from 'idb-keyval'
+import type { PlayerState } from '../engine/types'
+
+/**
+ * Persistance IndexedDB via idb-keyval (§8). localStorage est proscrit pour
+ * l'état de jeu. La sauvegarde est un simple snapshot JSON-compatible ;
+ * les Card ts-fsrs sont revivifiées à la lecture (reviveCard).
+ */
+
+const SAVE_KEY = 'forge-save-v1'
+export const SAVE_VERSION = 1
+
+interface SaveFile {
+  version: number
+  savedAt: number
+  player: PlayerState
+}
+
+export async function loadSave(): Promise<PlayerState | null> {
+  try {
+    const raw = await get<SaveFile>(SAVE_KEY)
+    if (!raw || raw.version !== SAVE_VERSION) return null
+    return raw.player
+  } catch {
+    return null
+  }
+}
+
+let saveChain: Promise<void> = Promise.resolve()
+
+/** Sauvegarde sérialisée (les appels s'enchaînent, pas d'écriture concurrente). */
+export function persistSave(player: PlayerState): Promise<void> {
+  saveChain = saveChain.then(() =>
+    set(SAVE_KEY, {
+      version: SAVE_VERSION,
+      savedAt: Date.now(),
+      player: JSON.parse(JSON.stringify(player)) as PlayerState,
+    }).catch((e) => console.error('Sauvegarde impossible :', e)),
+  )
+  return saveChain
+}
+
+/** Export JSON de la sauvegarde (téléchargement côté UI). */
+export function exportSave(player: PlayerState): string {
+  const file: SaveFile = {
+    version: SAVE_VERSION,
+    savedAt: Date.now(),
+    player,
+  }
+  return JSON.stringify(file, null, 2)
+}
+
+/** Import JSON — valide la version et la présence des champs de base. */
+export function parseImportedSave(json: string): PlayerState {
+  const file = JSON.parse(json) as SaveFile
+  if (file.version !== SAVE_VERSION) {
+    throw new Error(`Version de sauvegarde inconnue : ${file.version}`)
+  }
+  const p = file.player
+  if (
+    typeof p?.sparks !== 'number' ||
+    typeof p?.items !== 'object' ||
+    !Array.isArray(p?.unlockedVeins)
+  ) {
+    throw new Error('Fichier de sauvegarde invalide')
+  }
+  return p
+}

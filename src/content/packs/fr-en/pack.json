@@ -1,0 +1,38 @@
+{
+  "id": "fr-en",
+  "sourceLang": "fr",
+  "targetLang": "en",
+  "ttsLang": "en-US",
+  "name": "Anglais (depuis le français)",
+  "filons": [
+    {
+      "id": "survie",
+      "name": "Filon Survie",
+      "description": "Les essentiels pour ne jamais rester muet.",
+      "veins": [
+        "les_essentiels_1",
+        "au_restaurant",
+        "demander_son_chemin",
+        "faire_les_courses",
+        "urgences_et_sante"
+      ]
+    },
+    {
+      "id": "voyage",
+      "name": "Filon Voyage",
+      "description": "De l'aéroport à l'hôtel, voyager sans stress.",
+      "veins": [
+        "a_l_aeroport",
+        "a_l_hotel",
+        "prendre_les_transports",
+        "petites_conversations"
+      ]
+    },
+    {
+      "id": "travail",
+      "name": "Filon Travail",
+      "description": "Réunions, emails, négociation : l'anglais pro.",
+      "veins": ["en_reunion", "ecrire_un_email", "negocier"]
+    }
+  ]
+}
