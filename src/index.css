@@ -122,8 +122,8 @@ button {
 .ingot { position: relative; display: inline-flex; align-items: center; justify-content: center; flex: none; }
 .ingot img { width: 100%; height: 100%; object-fit: contain; }
 .ingot-label {
-  position: absolute; font-size: 0.7rem; font-weight: 700; color: #2a1405;
-  text-shadow: 0 1px 0 rgb(255 255 255 / 0.35);
+  position: absolute; font-size: 0.7rem; font-weight: 700; color: #fff;
+  text-shadow: 0 1px 2px rgb(0 0 0 / 0.9), 0 0 4px rgb(0 0 0 / 0.8);
 }
 
 /* ── Mineur (mascotte) ──────────────────────────────────────────────────── */
@@ -324,7 +324,7 @@ button {
   text-align: center;
   position: relative;
 }
-.rack-cell .ingot { height: 26px; margin: 0 auto 6px; width: 72px; }
+.rack-cell .ingot { margin: 0 auto 4px; }
 .rack-cell .word {
   font-size: 0.72rem;
   overflow: hidden;
@@ -586,3 +586,65 @@ button {
 .tuto-dots span.on { background: var(--gold-300); }
 .tuto-heat { width: 100%; display: grid; gap: 10px; margin-bottom: 18px; }
 .tuto-sparks { font-family: var(--font-mono); font-size: 2rem; color: var(--gold-300); margin-bottom: 14px; }
+
+/* ── Râtelier : urgence par statut, maîtrise par règle ─────────────────── */
+:root { --st-due: var(--ember-500); --st-shaky: var(--gold-300); --st-solid: var(--success); }
+.muted { color: var(--steel-200); font-size: 0.8rem; margin-top: 6px; line-height: 1.45; }
+.status-summary { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.status-chip {
+  font-size: 0.75rem; font-weight: 600; padding: 3px 10px; border-radius: 999px;
+  border: 1px solid currentColor;
+}
+.status-chip.due, .rule-counts .due { color: var(--st-due); }
+.status-chip.shaky, .rule-counts .shaky { color: var(--st-shaky); }
+.status-chip.solid, .rule-counts .solid { color: var(--st-solid); }
+.rule { margin-bottom: 14px; border-bottom: 1px solid var(--steel-700); padding-bottom: 14px; }
+.rule-toggle { width: 100%; text-align: left; display: block; }
+.rule-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; font-size: 0.85rem; }
+.rule-name { font-weight: 700; font-size: 1rem; }
+.rule-head .weak { color: var(--ember-500); font-weight: 700; }
+.rule-pattern { font-family: var(--font-mono); font-size: 0.72rem; color: var(--steel-200); margin: 2px 0 8px; }
+.stack-bar { display: flex; height: 8px; border-radius: 4px; overflow: hidden; background: var(--steel-700); gap: 2px; }
+.stack-bar span { min-width: 0; }
+.stack-bar .solid { background: var(--st-solid); }
+.stack-bar .shaky { background: var(--st-shaky); }
+.stack-bar .due { background: var(--st-due); }
+.stack-bar .unseen { background: var(--steel-600); }
+.rule-counts { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: 6px; font-size: 0.72rem; color: var(--steel-200); }
+.rule .rack-grid { margin-top: 12px; }
+.rack-cell.due { border-color: var(--st-due); background: rgb(255 107 53 / 0.08); }
+.rack-cell.shaky { border-color: rgb(255 209 102 / 0.55); }
+.rack-cell .status-dot { position: absolute; top: 7px; right: 7px; width: 8px; height: 8px; border-radius: 50%; }
+.status-dot.due { background: var(--st-due); box-shadow: 0 0 6px var(--st-due); }
+.status-dot.shaky { background: var(--st-shaky); }
+.status-dot.solid { background: var(--st-solid); }
+.rack-cell .cell-status { font-size: 0.64rem; margin-top: 2px; }
+.rack-cell.due .cell-status { color: var(--st-due); font-weight: 700; }
+.rack-cell.shaky .cell-status { color: var(--st-shaky); }
+.rack-cell.solid .cell-status { color: var(--st-solid); }
+.modal .note { background: var(--steel-900); border-radius: 8px; padding: 8px 10px; font-size: 0.8rem; color: var(--steel-200); margin: 8px 0 12px; }
+
+/* ── Astuce d'écran ─────────────────────────────────────────────────────── */
+.screen-tip {
+  display: flex; gap: 12px; align-items: center;
+  background: rgb(212 175 55 / 0.1); border: 1px solid rgb(212 175 55 / 0.4);
+  border-radius: 12px; padding: 10px 12px; margin-bottom: 14px;
+}
+.screen-tip p { font-size: 0.82rem; line-height: 1.45; color: var(--ink); flex: 1; }
+.screen-tip button { color: var(--gold-300); font-weight: 700; font-size: 0.8rem; padding: 8px 4px; white-space: nowrap; }
+
+/* ── Test de niveau ─────────────────────────────────────────────────────── */
+.placement-level { display: flex; align-items: baseline; gap: 12px; margin-top: 8px; }
+.placement-level span { color: var(--steel-200); font-size: 0.85rem; }
+.placement-level strong { font-family: var(--font-display); font-size: 1.6rem; color: var(--gold-300); }
+.rule-row { margin-bottom: 12px; }
+.rule-row .rule-head { margin-bottom: 4px; }
+.missed-list { list-style: none; display: grid; gap: 6px; font-size: 0.85rem; }
+.missed-list span { color: var(--steel-200); margin-left: 6px; }
+.weak-badge {
+  margin-left: 8px; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--ember-500); border: 1px solid var(--ember-500); border-radius: 999px; padding: 1px 7px; vertical-align: middle;
+}
+.placement-level strong.none { font-family: var(--font-body); font-size: 1rem; font-weight: 600; }
+.status-dot.new { background: var(--steel-400); }
+.rack-cell.new .cell-status { color: var(--steel-200); }

@@ -18,6 +18,7 @@ import {
 } from '../engine/economy'
 import { pickExercise } from '../engine/exercise'
 import { activePack } from '../content'
+import { weakVeins } from '../engine/mastery'
 import { loadSave, parseImportedSave, persistSave } from './persist'
 
 /** Bonus d'étincelles à la fin d'une veine (extraction complète, §5.1). */
@@ -79,6 +80,7 @@ interface GameState {
   tickPassive: (seconds: number) => void
   importSave: (json: string) => void
   setNewPerDay: (n: number) => void
+  finishPlacement: (placement: NonNullable<PlayerState['placement']>) => void
 }
 
 function freshPlayer(): PlayerState {
@@ -360,6 +362,21 @@ export const useGame = create<GameState>((set, get) => {
     quitLesson: () => {
       set({ lesson: null })
       get().refreshQueue()
+    },
+
+    finishPlacement: (placement) => {
+      const { player } = get()
+      // Les règles faibles sont débloquées gratuitement (2 au plus) pour y travailler tout de suite.
+      const toUnlock = weakVeins(placement.results)
+        .slice(0, 2)
+        .filter((id) => activePack.veins[id] && !player.unlockedVeins.includes(id))
+      const updated: PlayerState = {
+        ...player,
+        placement,
+        unlockedVeins: [...player.unlockedVeins, ...toUnlock],
+      }
+      set({ player: updated })
+      void persistSave(updated)
     },
 
     unlockVein: (veinId) => {

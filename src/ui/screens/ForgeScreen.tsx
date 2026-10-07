@@ -8,9 +8,16 @@ import type { ExerciseResult } from '../exercises/types'
 import { FeedbackCard, type Feedback } from '../components/FeedbackCard'
 import { SparkBurst } from '../components/SparkBurst'
 import { Miner } from '../components/Miner'
+import { ScreenTip } from '../components/ScreenTip'
 
 /** Écran principal : la Frappe (§2, boucle courte). */
-export function ForgeScreen({ onOpenVeins }: { onOpenVeins: () => void }) {
+export function ForgeScreen({
+  onOpenVeins,
+  onOpenPlacement,
+}: {
+  onOpenVeins: () => void
+  onOpenPlacement: () => void
+}) {
   const { queue, exercise, servedAt, combo, player, answerForge, refreshQueue, startLesson } =
     useGame()
   const [feedback, setFeedback] = useState<Feedback | null>(null)
@@ -46,6 +53,7 @@ export function ForgeScreen({ onOpenVeins }: { onOpenVeins: () => void }) {
 
   return (
     <div className="screen">
+      {item && exercise && <ScreenTip id="forge" text={STR.tips.forge} />}
       <SparkBurst trigger={burst} />
       {item && itemState && (
         <div className="forge-status">
@@ -81,7 +89,9 @@ export function ForgeScreen({ onOpenVeins }: { onOpenVeins: () => void }) {
               <button className="primary-btn" onClick={() => startLesson(firstVein.id)}>
                 {STR.forge.firstVein}
               </button>
-              <p style={{ marginTop: 14 }}>{firstVein.name}</p>
+              <button className="ghost-btn" style={{ marginTop: 12 }} onClick={onOpenPlacement}>
+                {STR.placement.cta}
+              </button>
             </>
           ) : (
             <>

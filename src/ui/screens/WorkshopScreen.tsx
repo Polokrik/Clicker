@@ -4,6 +4,7 @@ import { UPGRADE_COSTS, type UpgradeId } from '../../engine/economy'
 import { exportSave } from '../../store/persist'
 import { STR } from '../../i18n/strings'
 import { activePackId, packs, switchPack } from '../../content'
+import { ScreenTip } from '../components/ScreenTip'
 
 const UPGRADES: { id: UpgradeId; icon: string }[] = [
   { id: 'bellows', icon: '💨' },
@@ -12,7 +13,13 @@ const UPGRADES: { id: UpgradeId; icon: string }[] = [
 ]
 
 /** L'Atelier : upgrades, alliages (teaser), sauvegarde, réglages (§7). */
-export function WorkshopScreen({ onReplayTutorial }: { onReplayTutorial: () => void }) {
+export function WorkshopScreen({
+  onReplayTutorial,
+  onOpenPlacement,
+}: {
+  onReplayTutorial: () => void
+  onOpenPlacement: () => void
+}) {
   const { player, buyUpgrade, importSave, setNewPerDay } = useGame()
   const fileInput = useRef<HTMLInputElement>(null)
 
@@ -45,6 +52,7 @@ export function WorkshopScreen({ onReplayTutorial }: { onReplayTutorial: () => v
 
   return (
     <div className="screen">
+      <ScreenTip id="workshop" text={STR.tips.workshop} />
       <section className="shop-section">
         <h2>{STR.workshop.upgrades}</h2>
         {UPGRADES.map(({ id, icon }) => {
@@ -119,6 +127,13 @@ export function WorkshopScreen({ onReplayTutorial }: { onReplayTutorial: () => v
           </select>
         </section>
       )}
+
+      <section className="shop-section">
+        <h2>{STR.workshop.levelCheck}</h2>
+        <button className="ghost-btn" onClick={onOpenPlacement}>
+          {STR.placement.retake}
+        </button>
+      </section>
 
       <section className="shop-section">
         <h2>{STR.workshop.howTo}</h2>

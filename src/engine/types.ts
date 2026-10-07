@@ -62,6 +62,14 @@ export interface PlayerState {
   /** Historique du jour pour la limite new_per_day. */
   newIntroducedToday: { date: string; count: number }
   stats: { reviewsTotal: number; reviewsCorrect: number; sessionStart: number }
+  /** Dernier test de niveau (optionnel : absent sur les anciennes sauvegardes). */
+  placement?: {
+    date: number
+    results: Record<string, { correct: number; total: number }>
+    level: string | null
+    /** Items ratés pendant le test, à retenir en priorité. */
+    missed: string[]
+  }
 }
 
 /** Issue d'une réponse du joueur, avant mapping FSRS. */

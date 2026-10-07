@@ -1,13 +1,17 @@
 import { useGame } from '../../store/gameStore'
 import { activePack } from '../../content'
 import { STR } from '../../i18n/strings'
+import { ScreenTip } from '../components/ScreenTip'
+import { weakVeins } from '../../engine/mastery'
 
 /** Les Filons : carte des veines, arbre de progression (§7). */
 export function VeinsScreen() {
   const { player, unlockVein, startLesson } = useGame()
+  const weak = new Set(player.placement ? weakVeins(player.placement.results) : [])
 
   return (
     <div className="screen">
+      <ScreenTip id="veins" text={STR.tips.veins} />
       {activePack.filons.map((filon) => (
         <section key={filon.id} className="filon">
           <h2>{filon.name}</h2>
@@ -23,7 +27,10 @@ export function VeinsScreen() {
 
             return (
               <div key={veinId} className={`vein-card${unlocked ? '' : ' locked'}`}>
-                <h3>{vein.name}</h3>
+                <h3>
+                  {vein.name}
+                  {weak.has(veinId) && <span className="weak-badge">{STR.veins.weak}</span>}
+                </h3>
                 <div className="pattern">
                   {STR.veins.pattern}{STR.colon} {vein.pattern}
                 </div>

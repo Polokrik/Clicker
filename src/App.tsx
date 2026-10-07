@@ -10,6 +10,7 @@ import { RackScreen } from './ui/screens/RackScreen'
 import { VeinsScreen } from './ui/screens/VeinsScreen'
 import { WorkshopScreen } from './ui/screens/WorkshopScreen'
 import { LessonScreen } from './ui/screens/LessonScreen'
+import { PlacementScreen } from './ui/screens/PlacementScreen'
 import { WelcomeBackModal } from './ui/WelcomeBackModal'
 
 type Tab = 'forge' | 'rack' | 'veins' | 'workshop'
@@ -19,6 +20,7 @@ const TABS: { id: Tab }[] = [{ id: 'forge' }, { id: 'rack' }, { id: 'veins' }, {
 export default function App() {
   const { loaded, init, player, lesson, tickPassive } = useGame()
   const [tab, setTab] = useState<Tab>('forge')
+  const [placementOpen, setPlacementOpen] = useState(false)
   const [tutorialOpen, setTutorialOpen] = useState(() => !tutorialSeen())
 
   useEffect(() => {
@@ -70,16 +72,26 @@ export default function App() {
 
       {lesson ? (
         <LessonScreen />
+      ) : placementOpen ? (
+        <PlacementScreen onClose={() => setPlacementOpen(false)} />
       ) : (
         <>
-          {tab === 'forge' && <ForgeScreen onOpenVeins={() => setTab('veins')} />}
+          {tab === 'forge' && (
+            <ForgeScreen
+              onOpenVeins={() => setTab('veins')}
+              onOpenPlacement={() => setPlacementOpen(true)}
+            />
+          )}
           {tab === 'rack' && <RackScreen />}
           {tab === 'veins' && <VeinsScreen />}
-          {tab === 'workshop' && <WorkshopScreen onReplayTutorial={() => setTutorialOpen(true)} />}
+          {tab === 'workshop' && <WorkshopScreen
+              onReplayTutorial={() => setTutorialOpen(true)}
+              onOpenPlacement={() => setPlacementOpen(true)}
+            />}
         </>
       )}
 
-      {!lesson && (
+      {!lesson && !placementOpen && (
         <nav className="tabbar">
           {TABS.map(({ id }) => (
             <button

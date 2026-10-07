@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { STR } from '../i18n/strings'
 import { Ingot } from './components/Ingot'
+import { resetTips } from './components/ScreenTip'
 import { Miner, type MinerPose } from './components/Miner'
 
 const SEEN_KEY = 'forge-tutorial-v1'
@@ -42,6 +43,8 @@ function StepVisual({ step }: { step: number }) {
 }
 
 export function Tutorial({ onClose }: { onClose: () => void }) {
+  // Revoir le tutoriel rouvre aussi les astuces de chaque écran.
+  useEffect(resetTips, [])
   const [step, setStep] = useState(0)
   const steps = STR.tutorial.steps
   const last = step === steps.length - 1
