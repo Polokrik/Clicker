@@ -4,16 +4,25 @@ import { TIER_EXERCISE } from './types'
 /** Probabilité de servir un exercice d'un tier inférieur pour varier (§4). */
 export const LOWER_TIER_CHANCE = 0.2
 
+/** Part des cloze/saisies remplacés par « repère l'erreur » (items avec fautes types). */
+export const SPOT_CHANCE = 0.35
+
 /**
  * Choisit le type d'exercice pour un item : celui de son tier, avec 20 % de
  * chances d'un tier inférieur aléatoire — jamais supérieur.
  */
-export function pickExercise(tier: Tier, rng: () => number = Math.random): ExerciseType {
+export function pickExercise(
+  tier: Tier,
+  rng: () => number = Math.random,
+  hasWrong = false,
+): ExerciseType {
+  let picked: ExerciseType = TIER_EXERCISE[tier]
   if (tier > 0 && rng() < LOWER_TIER_CHANCE) {
-    const lower = Math.floor(rng() * tier) as Tier
-    return TIER_EXERCISE[lower]
+    picked = TIER_EXERCISE[Math.floor(rng() * tier) as Tier]
   }
-  return TIER_EXERCISE[tier]
+  // « Repère l'erreur » remplace parfois un cloze ou une saisie, si l'item a de vraies fautes types.
+  if (hasWrong && (picked === 'cloze' || picked === 'type') && rng() < SPOT_CHANCE) return 'spot'
+  return picked
 }
 
 /**

@@ -5,6 +5,10 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vite.dev/config/
 export default defineConfig({
+  define: {
+    // Version affichée dans les signalements : sha court du commit en CI, « dev » en local.
+    __BUILD__: JSON.stringify((process.env.GITHUB_SHA ?? 'dev').slice(0, 7)),
+  },
   // GitHub Pages sert le site sous /Clicker/ — BASE_PATH est posé par la CI.
   base: process.env.BASE_PATH ?? '/',
   plugins: [

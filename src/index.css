@@ -666,3 +666,15 @@ button {
 
 .ghost-btn.danger { color: #ff8a8d; border-color: rgb(229 72 77 / 0.5); }
 .primary-btn.danger { background: var(--danger); color: #fff; }
+
+.choices.two { grid-template-columns: 1fr 1fr; }
+
+.link-btn { display: inline-block; text-decoration: none; text-align: center; }
+.report-link { display: block; text-align: center; margin-top: 12px; font-size: 0.78rem; color: var(--steel-200); text-decoration: underline; }
+
+.challenge-score { display: flex; gap: 14px; justify-content: center; margin: 4px 0 14px; width: 100%; }
+.challenge-score > div { flex: 1; background: var(--steel-800); border: 1px solid var(--steel-700); border-radius: 12px; padding: 12px 8px; display: grid; gap: 2px; }
+.challenge-score span { font-size: 0.8rem; color: var(--steel-200); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.challenge-score strong { font-family: var(--font-mono); font-size: 1.6rem; color: var(--gold-300); }
+.challenge-score small { color: var(--steel-200); font-size: 0.72rem; }
+.resting .miner { margin: 0 auto; }

@@ -3,8 +3,9 @@ import { useGame } from '../../store/gameStore'
 import { UPGRADE_COSTS, type UpgradeId } from '../../engine/economy'
 import { exportSave, resetSave } from '../../store/persist'
 import { STR } from '../../i18n/strings'
-import { activePackId, packs, switchPack } from '../../content'
+import { activePack, activePackId, packs, switchPack } from '../../content'
 import { ScreenTip } from '../components/ScreenTip'
+import { reportHref } from '../report'
 
 const UPGRADES: { id: UpgradeId; icon: string }[] = [
   { id: 'bellows', icon: '💨' },
@@ -16,12 +17,15 @@ const UPGRADES: { id: UpgradeId; icon: string }[] = [
 export function WorkshopScreen({
   onReplayTutorial,
   onOpenPlacement,
+  onStartChallenge,
 }: {
   onReplayTutorial: () => void
   onOpenPlacement: () => void
+  onStartChallenge: (scope: string) => void
 }) {
   const { player, buyUpgrade, importSave, setNewPerDay } = useGame()
   const [confirmReset, setConfirmReset] = useState<'pack' | 'all' | null>(null)
+  const [challengeScope, setChallengeScope] = useState('mix')
   const fileInput = useRef<HTMLInputElement>(null)
 
   const retention =
@@ -130,6 +134,29 @@ export function WorkshopScreen({
       )}
 
       <section className="shop-section">
+        <h2>{STR.challenge.section}</h2>
+        <p className="muted" style={{ marginBottom: 10 }}>
+          {STR.challenge.sectionHint}
+        </p>
+        <select
+          className="type-input"
+          value={challengeScope}
+          onChange={(e) => setChallengeScope(e.target.value)}
+          style={{ marginBottom: 10 }}
+        >
+          <option value="mix">{STR.challenge.mix}</option>
+          {Object.values(activePack.veins).map((v) => (
+            <option key={v.id} value={v.id}>
+              {v.name}
+            </option>
+          ))}
+        </select>
+        <button className="ghost-btn" onClick={() => onStartChallenge(challengeScope)}>
+          {STR.challenge.create}
+        </button>
+      </section>
+
+      <section className="shop-section">
         <h2>{STR.workshop.levelCheck}</h2>
         <button className="ghost-btn" onClick={onOpenPlacement}>
           {STR.placement.retake}
@@ -164,6 +191,13 @@ export function WorkshopScreen({
             }}
           />
         </div>
+      </section>
+
+      <section className="shop-section">
+        <h2>{STR.report.button}</h2>
+        <a className="ghost-btn link-btn" href={reportHref()}>
+          ✉ {STR.report.button}
+        </a>
       </section>
 
       <section className="shop-section">

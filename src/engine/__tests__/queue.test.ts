@@ -109,3 +109,22 @@ describe('reinsertFailed — re-présentation différée (§3.4)', () => {
     expect(out.filter((e) => e.id === 'a')).toHaveLength(1)
   })
 })
+
+describe('pickExercise — repère l’erreur', () => {
+  // Séquence de tirages : [pas de rétrogradation, tirage « spot » réussi].
+  const seq = (values: number[]) => {
+    let i = 0
+    return () => values[i++ % values.length]
+  }
+
+  it('remplace un cloze par « spot » si l’item a des fautes types', async () => {
+    const { pickExercise } = await import('../exercise')
+    expect(pickExercise(1, seq([0.9, 0.1]), true)).toBe('spot')
+  })
+
+  it('ne propose jamais « spot » sans fautes types, ni quand le tirage échoue', async () => {
+    const { pickExercise } = await import('../exercise')
+    expect(pickExercise(1, seq([0.9, 0.1]), false)).toBe('cloze')
+    expect(pickExercise(1, seq([0.9, 0.9]), true)).toBe('cloze')
+  })
+})

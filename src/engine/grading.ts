@@ -11,6 +11,7 @@ export const SLOW_THRESHOLD_MS: Record<ExerciseType, number> = {
   type: 15_000,
   tiles: 20_000,
   audio: 12_000,
+  spot: 12_000,
 }
 
 /** En-deçà de la moitié du seuil = réponse « rapide » (candidate Easy). */

@@ -3,6 +3,7 @@ import { Rating } from 'ts-fsrs'
 import type { Item } from '../../content/schema'
 import { STR } from '../../i18n/strings'
 import { Miner } from './Miner'
+import { reportHref } from '../report'
 
 export interface Feedback {
   grade: Rating
@@ -68,6 +69,9 @@ export function FeedbackCard({
       <button className="primary-btn" onClick={onContinue}>
         {STR.forge.continue}
       </button>
+      <a className="report-link" href={reportHref(item.id)}>
+        {STR.report.item}
+      </a>
     </div>
   )
 }

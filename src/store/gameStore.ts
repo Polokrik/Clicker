@@ -100,6 +100,10 @@ function freshPlayer(): PlayerState {
   }
 }
 
+function hasWrong(itemId: string): boolean {
+  return (activePack.items[itemId]?.wrong.length ?? 0) > 0
+}
+
 function todayKey(): string {
   return new Date().toISOString().slice(0, 10)
 }
@@ -217,7 +221,7 @@ export const useGame = create<GameState>((set, get) => {
         newBudget: newBudget(player),
       })
       const head = queue[0]
-      const exercise = head ? pickExercise(player.items[head.id].tier) : null
+      const exercise = head ? pickExercise(player.items[head.id].tier, Math.random, hasWrong(head.id)) : null
       set({ player, loaded: true, welcomeBack, queue, exercise, servedAt: Date.now() })
       void persistSave(player)
     },
@@ -233,7 +237,7 @@ export const useGame = create<GameState>((set, get) => {
       const head = queue[0]
       set({
         queue,
-        exercise: head ? pickExercise(player.items[head.id].tier) : null,
+        exercise: head ? pickExercise(player.items[head.id].tier, Math.random, hasWrong(head.id)) : null,
         servedAt: Date.now(),
       })
     },
@@ -265,7 +269,7 @@ export const useGame = create<GameState>((set, get) => {
         player: updated,
         combo: failed ? 0 : combo + 1,
         queue: nextQueue,
-        exercise: nextHead ? pickExercise(updated.items[nextHead.id].tier) : null,
+        exercise: nextHead ? pickExercise(updated.items[nextHead.id].tier, Math.random, hasWrong(nextHead.id)) : null,
         servedAt: Date.now(),
       })
       return { grade, sparks }

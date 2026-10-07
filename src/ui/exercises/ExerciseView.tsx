@@ -5,6 +5,7 @@ import { ClozeExercise } from './ClozeExercise'
 import { TypeExercise } from './TypeExercise'
 import { TilesExercise } from './TilesExercise'
 import { AudioExercise } from './AudioExercise'
+import { SpotExercise } from './SpotExercise'
 
 /** Route vers le composant d'exercice du type demandé. */
 export function ExerciseView({
@@ -22,5 +23,7 @@ export function ExerciseView({
       return <TilesExercise {...props} />
     case 'audio':
       return <AudioExercise {...props} />
+    case 'spot':
+      return <SpotExercise {...props} />
   }
 }

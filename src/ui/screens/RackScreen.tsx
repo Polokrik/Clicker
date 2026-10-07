@@ -7,6 +7,7 @@ import { speak, ttsAvailable } from '../../audio/tts'
 import { STR, UI_LANG } from '../../i18n/strings'
 import { Ingot } from '../components/Ingot'
 import { ScreenTip } from '../components/ScreenTip'
+import { reportHref } from '../report'
 
 /** Le Râtelier : la mémoire, règle par règle, avec l'urgence de chaque lingot. */
 export function RackScreen() {
@@ -174,6 +175,9 @@ export function RackScreen() {
             <p className="muted" style={{ marginTop: 10 }}>
               {STR.rack.memoryHint}
             </p>
+            <a className="report-link" href={reportHref(sel.item.id)}>
+              {STR.report.item}
+            </a>
           </div>
         </div>
       )}

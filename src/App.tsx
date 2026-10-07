@@ -5,7 +5,7 @@ import { isDue } from './engine/scheduler'
 import { STR, UI_LANG } from './i18n/strings'
 import { Tutorial, tutorialSeen } from './ui/Tutorial'
 import { LanguagePicker } from './ui/LanguagePicker'
-import { needsLanguageChoice } from './content'
+import { activePackId, choosePack, needsLanguageChoice, packs } from './content'
 import { TabIcon } from './ui/components/TabIcon'
 import { ForgeScreen } from './ui/screens/ForgeScreen'
 import { RackScreen } from './ui/screens/RackScreen'
@@ -13,6 +13,8 @@ import { VeinsScreen } from './ui/screens/VeinsScreen'
 import { WorkshopScreen } from './ui/screens/WorkshopScreen'
 import { LessonScreen } from './ui/screens/LessonScreen'
 import { PlacementScreen } from './ui/screens/PlacementScreen'
+import { ChallengeScreen, type ChallengeStart } from './ui/screens/ChallengeScreen'
+import { challengeFromHash } from './engine/challenge'
 import { WelcomeBackModal } from './ui/WelcomeBackModal'
 
 type Tab = 'forge' | 'rack' | 'veins' | 'workshop'
@@ -22,9 +24,18 @@ const TABS: { id: Tab }[] = [{ id: 'forge' }, { id: 'rack' }, { id: 'veins' }, {
 export default function App() {
   const { loaded, init, player, lesson, tickPassive } = useGame()
   const [tab, setTab] = useState<Tab>('forge')
+  // Lien de défi reçu (#c=…), uniquement si son pack existe.
+  const [incoming] = useState(() => {
+    const c = challengeFromHash(location.hash)
+    return c && packs[c.pack] ? c : null
+  })
   const [chooseLanguage] = useState(needsLanguageChoice)
+  const [challenge, setChallenge] = useState<ChallengeStart | null>(
+    incoming && incoming.pack === activePackId ? { mode: 'incoming', challenge: incoming } : null,
+  )
+  const [challengeDismissed, setChallengeDismissed] = useState(false)
   const [placementOpen, setPlacementOpen] = useState(false)
-  const [tutorialOpen, setTutorialOpen] = useState(() => !tutorialSeen())
+  const [tutorialOpen, setTutorialOpen] = useState(() => !tutorialSeen() && !incoming)
 
   useEffect(() => {
     void init()
@@ -46,7 +57,17 @@ export default function App() {
     [player.items],
   )
 
+  // Premier lancement via un défi : on prend directement la langue du défi.
+  if (chooseLanguage && incoming) {
+    choosePack(incoming.pack)
+    return null
+  }
   if (chooseLanguage) return <LanguagePicker />
+
+  function closeChallenge() {
+    setChallenge(null)
+    history.replaceState(null, '', location.pathname + location.search)
+  }
 
   if (!loaded) {
     return (
@@ -77,6 +98,8 @@ export default function App() {
 
       {lesson ? (
         <LessonScreen />
+      ) : challenge ? (
+        <ChallengeScreen start={challenge} onClose={closeChallenge} />
       ) : placementOpen ? (
         <PlacementScreen onClose={() => setPlacementOpen(false)} />
       ) : (
@@ -92,11 +115,12 @@ export default function App() {
           {tab === 'workshop' && <WorkshopScreen
               onReplayTutorial={() => setTutorialOpen(true)}
               onOpenPlacement={() => setPlacementOpen(true)}
+              onStartChallenge={(scope) => setChallenge({ mode: 'create', scope })}
             />}
         </>
       )}
 
-      {!lesson && !placementOpen && (
+      {!lesson && !placementOpen && !challenge && (
         <nav className="tabbar">
           {TABS.map(({ id }) => (
             <button
@@ -110,6 +134,23 @@ export default function App() {
             </button>
           ))}
         </nav>
+      )}
+
+      {incoming && incoming.pack !== activePackId && !challengeDismissed && (
+        <div className="modal-backdrop" role="alertdialog" aria-modal="true">
+          <div className="modal">
+            <h2>{incoming.name}</h2>
+            <p className="muted" style={{ marginBottom: 16 }}>
+              {STR.challenge.mismatch} ({packs[incoming.pack].name})
+            </p>
+            <button className="primary-btn" onClick={() => choosePack(incoming.pack)}>
+              {STR.challenge.switchTo}
+            </button>
+            <button className="ghost-btn" style={{ marginTop: 10 }} onClick={() => setChallengeDismissed(true)}>
+              {STR.challenge.ignore}
+            </button>
+          </div>
+        </div>
       )}
 
       {tutorialOpen ? (

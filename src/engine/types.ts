@@ -4,7 +4,7 @@ import type { Card } from 'ts-fsrs'
 export type Tier = 0 | 1 | 2 | 3 | 4
 
 /** Types d'exercice, un par tier (plus variation occasionnelle vers le bas). */
-export type ExerciseType = 'qcm' | 'cloze' | 'type' | 'tiles' | 'audio'
+export type ExerciseType = 'qcm' | 'cloze' | 'type' | 'tiles' | 'audio' | 'spot'
 
 export const TIER_EXERCISE: Record<Tier, ExerciseType> = {
   0: 'qcm',
