@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { matchTyped } from '../../engine/levenshtein'
-import { STR } from '../../i18n/strings'
+import { STR, typePromptText } from '../../i18n/strings'
 import type { ExerciseProps } from './types'
 
 /** Tier 2 — Saisie clavier EN, tolérance typo Levenshtein ≤ 1 (§4). */
@@ -10,13 +10,13 @@ export function TypeExercise({ item, onAnswer }: ExerciseProps) {
 
   function submit() {
     if (!value.trim()) return
-    const match = matchTyped(value, item.word)
+    const match = matchTyped(value, item.word, item.strict)
     onAnswer({ correct: match !== 'wrong', fuzzy: match === 'fuzzy' })
   }
 
   return (
     <div className="exercise-card">
-      <div className="exercise-prompt">{STR.exercises.typePrompt}</div>
+      <div className="exercise-prompt">{typePromptText()}</div>
       <div className="exercise-question">« {item.translation} »</div>
       <div className="exercise-hint">
         {before}

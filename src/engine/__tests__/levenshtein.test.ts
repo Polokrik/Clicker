@@ -35,3 +35,11 @@ describe('matchTyped — tolérance typo (§4, tier 2)', () => {
     expect(matchTyped('command', 'to order')).toBe('wrong')
   })
 })
+
+describe('matchTyped strict', () => {
+  it('refuse la tolérance typo (vais / vas)', () => {
+    expect(matchTyped('vas', 'vais')).toBe('fuzzy')
+    expect(matchTyped('vas', 'vais', true)).toBe('wrong')
+    expect(matchTyped('vais', 'vais', true)).toBe('exact')
+  })
+})

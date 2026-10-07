@@ -1,5 +1,6 @@
 import { get, set } from 'idb-keyval'
 import type { PlayerState } from '../engine/types'
+import { activePackId } from '../content'
 
 /**
  * Persistance IndexedDB via idb-keyval (§8). localStorage est proscrit pour
@@ -7,7 +8,8 @@ import type { PlayerState } from '../engine/types'
  * les Card ts-fsrs sont revivifiées à la lecture (reviveCard).
  */
 
-const SAVE_KEY = 'forge-save-v1'
+// Une sauvegarde par pack. fr-en garde l'ancienne clé : les parties existantes survivent.
+const SAVE_KEY = activePackId === 'fr-en' ? 'forge-save-v1' : `forge-save-v1:${activePackId}`
 export const SAVE_VERSION = 1
 
 interface SaveFile {

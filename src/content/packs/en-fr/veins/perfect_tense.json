@@ -1,0 +1,264 @@
+{
+  "id": "perfect_tense",
+  "name": "Passé composé: être or avoir?",
+  "pattern": "être + past participle (agrees) for motion/state verbs · avoir for the rest",
+  "pattern_note": "Verbs of movement and state change (aller, venir, partir, arriver, rester, naître…) use être, and the participle agrees with the subject.",
+  "cefr": "B1",
+  "unlock_cost": 400,
+  "prereq": [
+    "irregular_present"
+  ],
+  "items": [
+    {
+      "id": "perfect_tense_suis_alle",
+      "chunk": "je suis allé",
+      "word": "je suis allé",
+      "translation": "I went",
+      "example": "Hier, je suis allé au marché.",
+      "example_translation": "Yesterday, I went to the market.",
+      "cloze": "Hier, ___ au marché.",
+      "tiles": [
+        "Hier",
+        "je",
+        "suis",
+        "allé",
+        "au",
+        "marché"
+      ],
+      "distractor_tiles": [
+        "ai",
+        "allée"
+      ],
+      "notes": "Aller takes être. Never «j'ai allé».",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "j'ai allé",
+        "je ai allé",
+        "je suis aller"
+      ],
+      "strict": true
+    },
+    {
+      "id": "perfect_tense_est_nee",
+      "chunk": "est née",
+      "word": "est née",
+      "translation": "was born",
+      "example": "Ma fille est née à Lyon.",
+      "example_translation": "My daughter was born in Lyon.",
+      "cloze": "Ma fille ___ à Lyon.",
+      "tiles": [
+        "Ma",
+        "fille",
+        "est",
+        "née",
+        "à",
+        "Lyon"
+      ],
+      "distractor_tiles": [
+        "a",
+        "nés"
+      ],
+      "notes": "Naître takes être and agrees: née (feminine).",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "a né",
+        "est né",
+        "a née"
+      ],
+      "strict": true
+    },
+    {
+      "id": "perfect_tense_sommes_rentres",
+      "chunk": "nous sommes rentrés",
+      "word": "nous sommes rentrés",
+      "translation": "we came home",
+      "example": "Hier soir, nous sommes rentrés tard.",
+      "example_translation": "We came home late last night.",
+      "cloze": "Hier soir, ___ tard.",
+      "tiles": [
+        "Hier",
+        "soir",
+        "nous",
+        "sommes",
+        "rentrés",
+        "tard"
+      ],
+      "distractor_tiles": [
+        "avons",
+        "rentré"
+      ],
+      "notes": "Rentrer takes être; masculine plural agreement → -s.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "nous avons rentré",
+        "nous sommes rentré",
+        "nous avons rentrés"
+      ],
+      "strict": true
+    },
+    {
+      "id": "perfect_tense_est_partie",
+      "chunk": "est partie",
+      "word": "est partie",
+      "translation": "left (she)",
+      "example": "Elle est partie à huit heures.",
+      "example_translation": "She left at eight o'clock.",
+      "cloze": "Elle ___ à huit heures.",
+      "tiles": [
+        "Elle",
+        "est",
+        "partie",
+        "à",
+        "huit",
+        "heures"
+      ],
+      "distractor_tiles": [
+        "a",
+        "parti"
+      ],
+      "notes": "Partir takes être; add -e for a feminine subject.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "est parti",
+        "a parti",
+        "est partit"
+      ],
+      "strict": true
+    },
+    {
+      "id": "perfect_tense_ai_monte",
+      "chunk": "j'ai monté",
+      "word": "j'ai monté",
+      "translation": "I carried up",
+      "example": "Hier, j'ai monté les valises au troisième étage.",
+      "example_translation": "Yesterday, I carried the suitcases up to the third floor.",
+      "cloze": "Hier, ___ les valises au troisième étage.",
+      "tiles": [
+        "Hier",
+        "j'ai",
+        "monté",
+        "les",
+        "valises",
+        "au",
+        "troisième",
+        "étage"
+      ],
+      "distractor_tiles": [
+        "suis",
+        "montées"
+      ],
+      "notes": "Monter takes AVOIR when it has a direct object (monter quelque chose).",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "je suis monté",
+        "j'ai montée",
+        "je ai monté"
+      ],
+      "strict": true
+    },
+    {
+      "id": "perfect_tense_est_montee",
+      "chunk": "est montée",
+      "word": "est montée",
+      "translation": "went up (she)",
+      "example": "Marie est montée au deuxième étage.",
+      "example_translation": "Marie went up to the second floor.",
+      "cloze": "Marie ___ au deuxième étage.",
+      "tiles": [
+        "Marie",
+        "est",
+        "montée",
+        "au",
+        "deuxième",
+        "étage"
+      ],
+      "distractor_tiles": [
+        "a",
+        "montées"
+      ],
+      "notes": "Monter without an object = movement → être.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "a monté",
+        "est monté",
+        "a montée"
+      ],
+      "strict": true
+    },
+    {
+      "id": "perfect_tense_sont_restes",
+      "chunk": "ils sont restés",
+      "word": "ils sont restés",
+      "translation": "they stayed",
+      "example": "Hier, ils sont restés à la maison.",
+      "example_translation": "Yesterday, they stayed at home.",
+      "cloze": "Hier, ___ à la maison.",
+      "tiles": [
+        "Hier",
+        "ils",
+        "sont",
+        "restés",
+        "à",
+        "la",
+        "maison"
+      ],
+      "distractor_tiles": [
+        "ont",
+        "resté"
+      ],
+      "notes": "Rester takes être.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "ils ont resté",
+        "ils sont resté",
+        "ils ont restés"
+      ],
+      "strict": true
+    },
+    {
+      "id": "perfect_tense_sont_arrivees",
+      "chunk": "elles sont arrivées",
+      "word": "elles sont arrivées",
+      "translation": "they arrived (f.)",
+      "example": "Hier, elles sont arrivées en retard.",
+      "example_translation": "Yesterday, they arrived late.",
+      "cloze": "Hier, ___ en retard.",
+      "tiles": [
+        "Hier",
+        "elles",
+        "sont",
+        "arrivées",
+        "en",
+        "retard"
+      ],
+      "distractor_tiles": [
+        "ont",
+        "arrivé"
+      ],
+      "notes": "Arriver takes être; feminine plural → -ées.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "elles ont arrivé",
+        "elles sont arrivé",
+        "elles sont arrivés"
+      ],
+      "strict": true
+    }
+  ]
+}

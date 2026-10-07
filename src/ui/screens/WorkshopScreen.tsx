@@ -3,6 +3,7 @@ import { useGame } from '../../store/gameStore'
 import { UPGRADE_COSTS, type UpgradeId } from '../../engine/economy'
 import { exportSave } from '../../store/persist'
 import { STR } from '../../i18n/strings'
+import { activePackId, packs, switchPack } from '../../content'
 
 const UPGRADES: { id: UpgradeId; icon: string }[] = [
   { id: 'bellows', icon: '💨' },
@@ -101,6 +102,23 @@ export function WorkshopScreen() {
           />
         </div>
       </section>
+
+      {Object.keys(packs).length > 1 && (
+        <section className="shop-section">
+          <h2>{STR.workshop.language}</h2>
+          <select
+            className="type-input"
+            value={activePackId}
+            onChange={(e) => switchPack(e.target.value)}
+          >
+            {Object.values(packs).map((p) => (
+              <option key={p.id} value={p.id}>
+                {p.name}
+              </option>
+            ))}
+          </select>
+        </section>
+      )}
 
       <section className="shop-section">
         <h2>{STR.workshop.save}</h2>

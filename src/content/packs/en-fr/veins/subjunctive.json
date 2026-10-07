@@ -1,0 +1,265 @@
+{
+  "id": "subjunctive",
+  "name": "Subjunctive triggers",
+  "pattern": "il faut que / bien que / pour que / avant que + subjunctive",
+  "pattern_note": "Certain expressions force the subjunctive. Learn the trigger, then the form — no need to «feel» it.",
+  "cefr": "B1",
+  "unlock_cost": 500,
+  "prereq": [
+    "perfect_tense"
+  ],
+  "items": [
+    {
+      "id": "subjunctive_faut_parte",
+      "chunk": "il faut que je parte",
+      "word": "parte",
+      "translation": "I have to leave",
+      "example": "Il faut que je parte avant dix heures.",
+      "example_translation": "I have to leave before ten o'clock.",
+      "cloze": "Il faut que je ___ avant dix heures.",
+      "tiles": [
+        "Il",
+        "faut",
+        "que",
+        "je",
+        "parte",
+        "avant",
+        "dix",
+        "heures"
+      ],
+      "distractor_tiles": [
+        "pars",
+        "partir"
+      ],
+      "notes": "Il faut que + subjunctive (never the infinitive or indicative).",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "pars",
+        "partir",
+        "partirai"
+      ],
+      "strict": true
+    },
+    {
+      "id": "subjunctive_bien_que_soit",
+      "chunk": "bien que ce soit",
+      "word": "soit",
+      "translation": "although it is",
+      "example": "Bien que ce soit cher, je l'achète.",
+      "example_translation": "Although it's expensive, I'm buying it.",
+      "cloze": "Bien que ce ___ cher, je l'achète.",
+      "tiles": [
+        "Bien",
+        "que",
+        "ce",
+        "soit",
+        "cher",
+        "je",
+        "l'achète"
+      ],
+      "distractor_tiles": [
+        "est",
+        "sera"
+      ],
+      "notes": "Bien que + subjunctive: soit, not «est».",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "est",
+        "sera",
+        "sont"
+      ],
+      "strict": true
+    },
+    {
+      "id": "subjunctive_veux_viennes",
+      "chunk": "je veux que tu viennes",
+      "word": "viennes",
+      "translation": "I want you to come",
+      "example": "Je veux que tu viennes demain.",
+      "example_translation": "I want you to come tomorrow.",
+      "cloze": "Je veux que tu ___ demain.",
+      "tiles": [
+        "Je",
+        "veux",
+        "que",
+        "tu",
+        "viennes",
+        "demain"
+      ],
+      "distractor_tiles": [
+        "viens",
+        "venir"
+      ],
+      "notes": "Vouloir que + subjunctive (different subjects).",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "viens",
+        "venir",
+        "viendras"
+      ],
+      "strict": true
+    },
+    {
+      "id": "subjunctive_avant_partes",
+      "chunk": "avant que tu partes",
+      "word": "partes",
+      "translation": "before you leave",
+      "example": "Appelle-moi avant que tu partes.",
+      "example_translation": "Call me before you leave.",
+      "cloze": "Appelle-moi avant que tu ___.",
+      "tiles": [
+        "Appelle-moi",
+        "avant",
+        "que",
+        "tu",
+        "partes"
+      ],
+      "distractor_tiles": [
+        "pars",
+        "partiras"
+      ],
+      "notes": "Avant que + subjunctive (and no «ne» needed).",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "pars",
+        "partiras",
+        "partir"
+      ],
+      "strict": true
+    },
+    {
+      "id": "subjunctive_pour_puissions",
+      "chunk": "pour que nous puissions",
+      "word": "puissions",
+      "translation": "so that we can",
+      "example": "Je l'aide pour que nous puissions finir.",
+      "example_translation": "I'm helping him so that we can finish.",
+      "cloze": "Je l'aide pour que nous ___ finir.",
+      "tiles": [
+        "Je",
+        "l'aide",
+        "pour",
+        "que",
+        "nous",
+        "puissions",
+        "finir"
+      ],
+      "distractor_tiles": [
+        "pouvons",
+        "pourrons"
+      ],
+      "notes": "Pour que + subjunctive of pouvoir: puissions.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "pouvons",
+        "pourrons",
+        "pouvoir"
+      ],
+      "strict": true
+    },
+    {
+      "id": "subjunctive_faut_fassions",
+      "chunk": "il faut que nous fassions",
+      "word": "fassions",
+      "translation": "we have to do",
+      "example": "Il faut que nous fassions attention.",
+      "example_translation": "We have to be careful.",
+      "cloze": "Il faut que nous ___ attention.",
+      "tiles": [
+        "Il",
+        "faut",
+        "que",
+        "nous",
+        "fassions",
+        "attention"
+      ],
+      "distractor_tiles": [
+        "faisons",
+        "ferons"
+      ],
+      "notes": "Faire → que nous fassions.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "faisons",
+        "ferons",
+        "faire"
+      ],
+      "strict": true
+    },
+    {
+      "id": "subjunctive_pense_vienne",
+      "chunk": "je ne pense pas qu'il vienne",
+      "word": "vienne",
+      "translation": "I don't think he'll come",
+      "example": "Je ne pense pas qu'il vienne.",
+      "example_translation": "I don't think he'll come.",
+      "cloze": "Je ne pense pas qu'il ___.",
+      "tiles": [
+        "Je",
+        "ne",
+        "pense",
+        "pas",
+        "qu'il",
+        "vienne"
+      ],
+      "distractor_tiles": [
+        "vient",
+        "viendra"
+      ],
+      "notes": "Negated opinion verbs (ne pas penser que) → subjunctive.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "vient",
+        "viendra",
+        "venir"
+      ],
+      "strict": true
+    },
+    {
+      "id": "subjunctive_faut_aies",
+      "chunk": "il faut que tu aies",
+      "word": "aies",
+      "translation": "you must have",
+      "example": "Il faut que tu aies ton passeport.",
+      "example_translation": "You must have your passport.",
+      "cloze": "Il faut que tu ___ ton passeport.",
+      "tiles": [
+        "Il",
+        "faut",
+        "que",
+        "tu",
+        "aies",
+        "ton",
+        "passeport"
+      ],
+      "distractor_tiles": [
+        "as",
+        "auras"
+      ],
+      "notes": "Avoir → que tu aies (irregular subjunctive).",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "as",
+        "auras",
+        "avoir"
+      ],
+      "strict": true
+    }
+  ]
+}

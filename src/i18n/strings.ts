@@ -1,9 +1,11 @@
+import { activePack } from '../content'
+
 /**
- * Textes d'interface, centralisés pour la future déclinaison multilingue :
- * l'UI est en français (langue source du pack actif). Ajouter une langue
- * d'interface = ajouter un objet du même type et un sélecteur.
+ * Textes d'interface, centralisés. La langue de l'UI = langue source du pack
+ * actif (fr-en → français, en-fr → anglais). Ajouter une langue d'interface =
+ * ajouter un objet du même type dans `LOCALES` et ses noms de langues.
  */
-export const STR = {
+const FR = {
   appName: 'La Forge des Mots',
   tabs: { forge: 'Forge', rack: 'Râtelier', veins: 'Filons', workshop: 'Atelier' },
   forge: {
@@ -24,7 +26,7 @@ export const STR = {
   exercises: {
     qcmPrompt: 'Comment dit-on…',
     clozePrompt: 'Complète la phrase :',
-    typePrompt: 'Écris en anglais :',
+    typePrompt: 'Écris en {lang} :',
     typePlaceholder: 'Tape ta réponse…',
     validate: 'Valider',
     tilesPrompt: 'Reconstruis la phrase :',
@@ -75,6 +77,7 @@ export const STR = {
     chimney: { name: 'Cheminée', desc: '+4 h de plafond hors-ligne / niveau' },
     alloys: 'Alliages',
     alloysSoon: 'Fusionne des lingots Maîtrisés d’une même veine en phrases complètes. Bientôt à la forge…',
+    language: 'Langue à apprendre',
     save: 'Sauvegarde',
     exportSave: 'Exporter (JSON)',
     importSave: 'Importer',
@@ -91,5 +94,113 @@ export const STR = {
     goForge: 'À la forge !',
     ok: 'Continuer',
   },
-  tierNames: ['Minerai brut', 'Chauffé', 'Forgé', 'Trempé', 'Maîtrisé'] as const,
+  tierNames: ['Minerai brut', 'Chauffé', 'Forgé', 'Trempé', 'Maîtrisé'] as string[],
+}
+
+const EN: typeof FR = {
+  appName: 'Word Forge',
+  tabs: { forge: 'Forge', rack: 'Rack', veins: 'Veins', workshop: 'Workshop' },
+  forge: {
+    resting: 'The metal is resting',
+    restingHint: 'No ingot to re-forge right now. Come back later, or:',
+    openVein: 'Open a new vein',
+    close: 'You can close the app, the forge keeps working.',
+    combo: 'combo',
+    perSec: '/s',
+    correct: 'Well struck!',
+    fast: 'Lightning strike!',
+    slow: 'Struck, but slowly…',
+    wrong: 'The metal resisted',
+    answerWas: 'The right answer:',
+    continue: 'Continue',
+    heat: 'Heat',
+  },
+  exercises: {
+    qcmPrompt: 'How do you say…',
+    clozePrompt: 'Complete the sentence:',
+    typePrompt: 'Type it in {lang}:',
+    typePlaceholder: 'Type your answer…',
+    validate: 'Check',
+    tilesPrompt: 'Rebuild the sentence:',
+    audioPrompt: 'Listen and fill in:',
+    listen: 'Listen',
+    noTts: 'No voice on this device — the sentence is shown instead.',
+  },
+  lesson: {
+    prospect: 'Prospecting',
+    extract: 'Extraction',
+    startDrill: 'Go to extraction',
+    card: 'card',
+    of: 'of',
+    grammarNote: 'The vein pattern',
+    done: 'Vein exhausted!',
+    doneHint: 'The ingots join your rack. Come back to re-forge them as they cool.',
+    bonus: 'Vein completion bonus',
+    quit: 'Quit lesson',
+    next: 'Next',
+    prev: 'Previous',
+  },
+  rack: {
+    title: 'The Rack',
+    empty: 'No ingots yet. Open a vein in Veins!',
+    due: 'to re-forge',
+    dueBadge: 'due',
+    sortDueFirst: 'Due ingots appear first.',
+    stats: { tier: 'Tier', reps: 'Strikes', lapses: 'Misses', due: 'Next forge' },
+    now: 'now',
+  },
+  veins: {
+    title: 'The Veins',
+    locked: 'Locked',
+    unlock: 'Unlock',
+    start: 'Start',
+    completed: 'Completed',
+    needPrereq: 'Finish first:',
+    items: 'items',
+    pattern: 'Pattern',
+  },
+  workshop: {
+    title: 'The Workshop',
+    upgrades: 'Upgrades',
+    buy: 'Buy',
+    level: 'lvl',
+    bellows: { name: 'Bellows', desc: '+25% sparks per strike / level' },
+    anvil: { name: 'Runic anvil', desc: '+25% passive income / level' },
+    chimney: { name: 'Chimney', desc: '+4 h offline cap / level' },
+    alloys: 'Alloys',
+    alloysSoon: 'Fuse Mastered ingots of one vein into full sentences. Coming to the forge…',
+    language: 'Language to learn',
+    save: 'Save data',
+    exportSave: 'Export (JSON)',
+    importSave: 'Import',
+    newPerDay: 'New items per day',
+    stats: 'Statistics',
+    retention: 'Success rate',
+    reviews: 'total strikes',
+  },
+  welcome: {
+    title: 'While you were away',
+    earned: 'sparks forged by your ingots',
+    due: 'ingots to re-forge',
+    suggested: 'Suggested vein:',
+    goForge: 'To the forge!',
+    ok: 'Continue',
+  },
+  tierNames: ['Raw ore', 'Heated', 'Forged', 'Tempered', 'Mastered'],
+}
+
+const LOCALES: Record<string, typeof FR> = { fr: FR, en: EN }
+
+/** Noms des langues apprises, dans la langue de l'UI. */
+const LANG_NAMES: Record<string, Record<string, string>> = {
+  fr: { en: 'anglais', fr: 'français', hi: 'hindi' },
+  en: { en: 'English', fr: 'French', hi: 'Hindi' },
+}
+
+export const UI_LANG = LOCALES[activePack.sourceLang] ? activePack.sourceLang : 'en'
+export const STR = LOCALES[UI_LANG]
+
+export function typePromptText(): string {
+  const name = LANG_NAMES[UI_LANG][activePack.targetLang] ?? activePack.targetLang
+  return STR.exercises.typePrompt.replace('{lang}', name)
 }

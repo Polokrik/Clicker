@@ -7,7 +7,8 @@ import type { ExerciseProps } from './types'
 /** Tier 1 — Cloze : phrase EN à trou, 4 choix (§4). */
 export function ClozeExercise({ item, onAnswer }: ExerciseProps) {
   const choices = useMemo(() => {
-    // Distracteurs dédiés d'abord, complétés depuis le pool global.
+    if (item.wrong.length >= 3) return buildChoices(item.word, item.wrong, 3)
+    // Sinon : distracteurs dédiés mêlés au pool global.
     const pool = [
       ...item.distractor_tiles,
       ...Object.values(activePack.items)
@@ -15,7 +16,7 @@ export function ClozeExercise({ item, onAnswer }: ExerciseProps) {
         .map((i) => i.word),
     ]
     return buildChoices(item.word, pool, 3)
-  }, [item.id, item.word, item.distractor_tiles])
+  }, [item.id, item.word, item.distractor_tiles, item.wrong])
 
   const [before, after] = item.cloze.split('___')
 

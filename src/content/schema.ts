@@ -26,6 +26,10 @@ export const ItemSchema = z.object({
   /** Note pédagogique courte, en langue source. */
   notes: z.string().default(''),
   tags: z.array(z.string()).default([]),
+  /** Mauvaises réponses plausibles (QCM/cloze) ; si ≥ 3, elles remplacent le tirage au hasard. */
+  wrong: z.array(z.string().min(1)).default([]),
+  /** Saisie exacte exigée (pas de tolérance typo) — pour la grammaire (vais/vas). */
+  strict: z.boolean().default(false),
 })
 
 export const VeinSchema = z.object({

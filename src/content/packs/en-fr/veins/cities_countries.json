@@ -1,0 +1,254 @@
+{
+  "id": "cities_countries",
+  "name": "Cities & countries",
+  "pattern": "à + city · en + feminine country · au + masculine · aux + plural",
+  "pattern_note": "Cities take «à». Countries need a gendered preposition: en (feminine or vowel), au (masculine), aux (plural).",
+  "cefr": "A2",
+  "unlock_cost": 200,
+  "prereq": [
+    "gender_traps"
+  ],
+  "items": [
+    {
+      "id": "cities_countries_lyon",
+      "chunk": "à Lyon",
+      "word": "à Lyon",
+      "translation": "in Lyon",
+      "example": "J'habite à Lyon depuis deux ans.",
+      "example_translation": "I've lived in Lyon for two years.",
+      "cloze": "J'habite ___ depuis deux ans.",
+      "tiles": [
+        "J'habite",
+        "à",
+        "Lyon",
+        "depuis",
+        "deux",
+        "ans"
+      ],
+      "distractor_tiles": [
+        "en",
+        "au"
+      ],
+      "notes": "Cities: always «à» (à Paris, à Londres).",
+      "tags": [
+        "A2"
+      ],
+      "wrong": [
+        "en Lyon",
+        "au Lyon",
+        "aux Lyon"
+      ],
+      "strict": true
+    },
+    {
+      "id": "cities_countries_espagne",
+      "chunk": "en Espagne",
+      "word": "en Espagne",
+      "translation": "in Spain",
+      "example": "Nous passons nos vacances en Espagne.",
+      "example_translation": "We spend our holidays in Spain.",
+      "cloze": "Nous passons nos vacances ___.",
+      "tiles": [
+        "Nous",
+        "passons",
+        "nos",
+        "vacances",
+        "en",
+        "Espagne"
+      ],
+      "distractor_tiles": [
+        "à",
+        "au"
+      ],
+      "notes": "Feminine countries (ending in -e) take «en».",
+      "tags": [
+        "A2"
+      ],
+      "wrong": [
+        "à Espagne",
+        "au Espagne",
+        "aux Espagne"
+      ],
+      "strict": true
+    },
+    {
+      "id": "cities_countries_japon",
+      "chunk": "au Japon",
+      "word": "au Japon",
+      "translation": "in Japan",
+      "example": "Il travaille au Japon.",
+      "example_translation": "He works in Japan.",
+      "cloze": "Il travaille ___.",
+      "tiles": [
+        "Il",
+        "travaille",
+        "au",
+        "Japon"
+      ],
+      "distractor_tiles": [
+        "en",
+        "à"
+      ],
+      "notes": "Masculine countries take «au» (au Japon, au Canada, au Maroc).",
+      "tags": [
+        "A2"
+      ],
+      "wrong": [
+        "en Japon",
+        "à Japon",
+        "aux Japon"
+      ],
+      "strict": true
+    },
+    {
+      "id": "cities_countries_usa",
+      "chunk": "aux États-Unis",
+      "word": "aux États-Unis",
+      "translation": "in the United States",
+      "example": "Ma sœur étudie aux États-Unis.",
+      "example_translation": "My sister studies in the United States.",
+      "cloze": "Ma sœur étudie ___.",
+      "tiles": [
+        "Ma",
+        "sœur",
+        "étudie",
+        "aux",
+        "États-Unis"
+      ],
+      "distractor_tiles": [
+        "en",
+        "au"
+      ],
+      "notes": "Plural countries take «aux».",
+      "tags": [
+        "A2"
+      ],
+      "wrong": [
+        "en États-Unis",
+        "au États-Unis",
+        "à États-Unis"
+      ],
+      "strict": true
+    },
+    {
+      "id": "cities_countries_portugal",
+      "chunk": "au Portugal",
+      "word": "au Portugal",
+      "translation": "in Portugal",
+      "example": "Mes cousins vivent au Portugal.",
+      "example_translation": "My cousins live in Portugal.",
+      "cloze": "Mes cousins vivent ___.",
+      "tiles": [
+        "Mes",
+        "cousins",
+        "vivent",
+        "au",
+        "Portugal"
+      ],
+      "distractor_tiles": [
+        "en",
+        "à"
+      ],
+      "notes": "Portugal is masculine even though it looks like Espagne — learn the exception.",
+      "tags": [
+        "A2"
+      ],
+      "wrong": [
+        "en Portugal",
+        "à Portugal",
+        "aux Portugal"
+      ],
+      "strict": true
+    },
+    {
+      "id": "cities_countries_pays_bas",
+      "chunk": "aux Pays-Bas",
+      "word": "aux Pays-Bas",
+      "translation": "in the Netherlands",
+      "example": "Nous allons aux Pays-Bas en avril.",
+      "example_translation": "We're going to the Netherlands in April.",
+      "cloze": "Nous allons ___ en avril.",
+      "tiles": [
+        "Nous",
+        "allons",
+        "aux",
+        "Pays-Bas",
+        "en",
+        "avril"
+      ],
+      "distractor_tiles": [
+        "au"
+      ],
+      "notes": "Pays-Bas is plural: aux Pays-Bas.",
+      "tags": [
+        "A2"
+      ],
+      "wrong": [
+        "au Pays-Bas",
+        "en Pays-Bas",
+        "à Pays-Bas"
+      ],
+      "strict": true
+    },
+    {
+      "id": "cities_countries_cuba",
+      "chunk": "à Cuba",
+      "word": "à Cuba",
+      "translation": "in Cuba",
+      "example": "Elle est née à Cuba.",
+      "example_translation": "She was born in Cuba.",
+      "cloze": "Elle est née ___.",
+      "tiles": [
+        "Elle",
+        "est",
+        "née",
+        "à",
+        "Cuba"
+      ],
+      "distractor_tiles": [
+        "en",
+        "au"
+      ],
+      "notes": "Islands usually take «à» (à Cuba, à Malte, à Tahiti).",
+      "tags": [
+        "A2"
+      ],
+      "wrong": [
+        "en Cuba",
+        "au Cuba",
+        "aux Cuba"
+      ],
+      "strict": true
+    },
+    {
+      "id": "cities_countries_allemagne",
+      "chunk": "en Allemagne",
+      "word": "en Allemagne",
+      "translation": "in Germany",
+      "example": "Mon frère habite en Allemagne.",
+      "example_translation": "My brother lives in Germany.",
+      "cloze": "Mon frère habite ___.",
+      "tiles": [
+        "Mon",
+        "frère",
+        "habite",
+        "en",
+        "Allemagne"
+      ],
+      "distractor_tiles": [
+        "à",
+        "au"
+      ],
+      "notes": "Feminine country → «en».",
+      "tags": [
+        "A2"
+      ],
+      "wrong": [
+        "à Allemagne",
+        "au Allemagne",
+        "aux Allemagne"
+      ],
+      "strict": true
+    }
+  ]
+}

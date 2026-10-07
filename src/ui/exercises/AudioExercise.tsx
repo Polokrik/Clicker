@@ -20,7 +20,7 @@ export function AudioExercise({ item, onAnswer }: ExerciseProps) {
 
   function submit() {
     if (!value.trim()) return
-    const match = matchTyped(value, item.word)
+    const match = matchTyped(value, item.word, item.strict)
     onAnswer({ correct: match !== 'wrong', fuzzy: match === 'fuzzy' })
   }
 

@@ -1,0 +1,264 @@
+{
+  "id": "partitives",
+  "name": "Partitives & «de»",
+  "pattern": "du / de la / de l' → de after negation or quantity",
+  "pattern_note": "After a negation or an expression of quantity, du/de la/des collapse to «de» (d' before a vowel).",
+  "cefr": "B1",
+  "unlock_cost": 300,
+  "prereq": [
+    "irregular_present"
+  ],
+  "items": [
+    {
+      "id": "partitives_du_pain",
+      "chunk": "du pain",
+      "word": "du pain",
+      "translation": "some bread",
+      "example": "Je voudrais du pain, s'il vous plaît.",
+      "example_translation": "I'd like some bread, please.",
+      "cloze": "Je voudrais ___, s'il vous plaît.",
+      "tiles": [
+        "Je",
+        "voudrais",
+        "du",
+        "pain",
+        "s'il",
+        "vous",
+        "plaît"
+      ],
+      "distractor_tiles": [
+        "de",
+        "le"
+      ],
+      "notes": "Masculine uncountable → du.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "de pain",
+        "de la pain",
+        "des pain"
+      ],
+      "strict": true
+    },
+    {
+      "id": "partitives_de_la_confiture",
+      "chunk": "de la confiture",
+      "word": "de la confiture",
+      "translation": "some jam",
+      "example": "Tu veux de la confiture ?",
+      "example_translation": "Do you want some jam?",
+      "cloze": "Tu veux ___ ?",
+      "tiles": [
+        "Tu",
+        "veux",
+        "de",
+        "la",
+        "confiture"
+      ],
+      "distractor_tiles": [
+        "du",
+        "le"
+      ],
+      "notes": "Feminine uncountable → de la.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "du confiture",
+        "de confiture",
+        "de le confiture"
+      ],
+      "strict": true
+    },
+    {
+      "id": "partitives_de_leau",
+      "chunk": "de l'eau",
+      "word": "de l'eau",
+      "translation": "some water",
+      "example": "Je bois de l'eau tous les jours.",
+      "example_translation": "I drink water every day.",
+      "cloze": "Je bois ___ tous les jours.",
+      "tiles": [
+        "Je",
+        "bois",
+        "de",
+        "l'eau",
+        "tous",
+        "les",
+        "jours"
+      ],
+      "distractor_tiles": [
+        "du",
+        "la"
+      ],
+      "notes": "Before a vowel: de l'.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "du eau",
+        "de la eau",
+        "des eau"
+      ],
+      "strict": true
+    },
+    {
+      "id": "partitives_pas_de_pain",
+      "chunk": "pas de pain",
+      "word": "pas de pain",
+      "translation": "no bread",
+      "example": "Je n'ai pas de pain ce matin.",
+      "example_translation": "I have no bread this morning.",
+      "cloze": "Je n'ai ___ ce matin.",
+      "tiles": [
+        "Je",
+        "n'ai",
+        "pas",
+        "de",
+        "pain",
+        "ce",
+        "matin"
+      ],
+      "distractor_tiles": [
+        "du",
+        "le"
+      ],
+      "notes": "Negation kills the article: pas DE pain.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "pas du pain",
+        "pas des pain",
+        "pas le pain"
+      ],
+      "strict": true
+    },
+    {
+      "id": "partitives_beaucoup_de_monde",
+      "chunk": "beaucoup de monde",
+      "word": "beaucoup de monde",
+      "translation": "a lot of people",
+      "example": "Il y a beaucoup de monde ici.",
+      "example_translation": "There are a lot of people here.",
+      "cloze": "Il y a ___ ici.",
+      "tiles": [
+        "Il",
+        "y",
+        "a",
+        "beaucoup",
+        "de",
+        "monde",
+        "ici"
+      ],
+      "distractor_tiles": [
+        "du",
+        "des"
+      ],
+      "notes": "Quantity → de, always. Note «monde» is singular but means «people».",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "beaucoup du monde",
+        "beaucoup des monde",
+        "beaucoup de le monde"
+      ],
+      "strict": true
+    },
+    {
+      "id": "partitives_un_peu_deau",
+      "chunk": "un peu d'eau",
+      "word": "un peu d'eau",
+      "translation": "a little water",
+      "example": "Je voudrais un peu d'eau.",
+      "example_translation": "I'd like a little water.",
+      "cloze": "Je voudrais ___.",
+      "tiles": [
+        "Je",
+        "voudrais",
+        "un",
+        "peu",
+        "d'eau"
+      ],
+      "distractor_tiles": [
+        "de",
+        "du"
+      ],
+      "notes": "un peu DE + noun (d' before a vowel).",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "un peu de l'eau",
+        "un peu du eau",
+        "un peu l'eau"
+      ],
+      "strict": true
+    },
+    {
+      "id": "partitives_trop_de_bruit",
+      "chunk": "trop de bruit",
+      "word": "trop de bruit",
+      "translation": "too much noise",
+      "example": "Il y a trop de bruit ici.",
+      "example_translation": "There is too much noise here.",
+      "cloze": "Il y a ___ ici.",
+      "tiles": [
+        "Il",
+        "y",
+        "a",
+        "trop",
+        "de",
+        "bruit",
+        "ici"
+      ],
+      "distractor_tiles": [
+        "du",
+        "le"
+      ],
+      "notes": "Trop de / assez de / peu de + noun, no article.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "trop du bruit",
+        "trop de le bruit",
+        "trop des bruit"
+      ],
+      "strict": true
+    },
+    {
+      "id": "partitives_pas_dargent",
+      "chunk": "pas d'argent",
+      "word": "pas d'argent",
+      "translation": "no money",
+      "example": "Je n'ai pas d'argent sur moi.",
+      "example_translation": "I have no money on me.",
+      "cloze": "Je n'ai ___ sur moi.",
+      "tiles": [
+        "Je",
+        "n'ai",
+        "pas",
+        "d'argent",
+        "sur",
+        "moi"
+      ],
+      "distractor_tiles": [
+        "de",
+        "du"
+      ],
+      "notes": "Pas de → pas d' before a vowel.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "pas de l'argent",
+        "pas du argent",
+        "pas l'argent"
+      ],
+      "strict": true
+    }
+  ]
+}

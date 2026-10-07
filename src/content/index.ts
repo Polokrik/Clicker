@@ -67,6 +67,30 @@ export function loadPacks(): Record<string, Pack> {
 
 export const packs = loadPacks()
 
-/** Pack actif au lancement. Deviendra un réglage quand d'autres packs existeront. */
-export const DEFAULT_PACK_ID = 'fr-en'
-export const activePack: Pack = packs[DEFAULT_PACK_ID]
+/** Pack proposé au premier lancement. */
+export const DEFAULT_PACK_ID = 'en-fr'
+const PACK_KEY = 'forge-pack'
+
+function storedPackId(): string | null {
+  try {
+    return localStorage.getItem(PACK_KEY)
+  } catch {
+    return null
+  }
+}
+
+const startId = storedPackId()
+export const activePackId: string =
+  startId && packs[startId] ? startId : packs[DEFAULT_PACK_ID] ? DEFAULT_PACK_ID : Object.keys(packs)[0]
+export const activePack: Pack = packs[activePackId]
+
+/** Change de pack : mémorise le choix puis recharge (état et textes liés au pack). */
+export function switchPack(id: string): void {
+  if (!packs[id] || id === activePackId) return
+  try {
+    localStorage.setItem(PACK_KEY, id)
+  } catch {
+    // stockage indisponible : le choix ne survivra pas au rechargement
+  }
+  location.reload()
+}

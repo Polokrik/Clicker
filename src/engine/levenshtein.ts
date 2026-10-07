@@ -32,12 +32,18 @@ export type TypeMatch = 'exact' | 'fuzzy' | 'wrong'
 
 /**
  * Évaluation d'une saisie clavier (§4, tier 2) :
- * exact → réussite normale ; distance ≤ 1 → réussite « Hard » ; sinon échec.
+ * exact → réussite normale ; distance ≤ 1 → réussite « Hard » (sauf `strict`) ;
+ * sinon échec.
  */
-export function matchTyped(input: string, expected: string): TypeMatch {
+export function matchTyped(
+  input: string,
+  expected: string,
+  strict = false,
+): TypeMatch {
   const a = normalizeAnswer(input)
   const b = normalizeAnswer(expected)
   if (a === b) return 'exact'
-  if (levenshtein(a, b) <= 1) return 'fuzzy'
+  // strict : les items de grammaire diffèrent souvent d'une lettre (vais/vas, a/à).
+  if (!strict && levenshtein(a, b) <= 1) return 'fuzzy'
   return 'wrong'
 }

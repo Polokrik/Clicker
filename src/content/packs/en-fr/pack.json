@@ -1,0 +1,29 @@
+{
+  "id": "en-fr",
+  "sourceLang": "en",
+  "targetLang": "fr",
+  "ttsLang": "fr-FR",
+  "name": "French (from English)",
+  "filons": [
+    {
+      "id": "traps",
+      "name": "Everyday traps",
+      "description": "The mistakes that survive at A2: gender, irregular verbs, prepositions.",
+      "veins": [
+        "gender_traps",
+        "irregular_present",
+        "cities_countries"
+      ]
+    },
+    {
+      "id": "b1",
+      "name": "Level up to B1",
+      "description": "Partitives, the passé composé and the subjunctive.",
+      "veins": [
+        "partitives",
+        "perfect_tense",
+        "subjunctive"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,261 @@
+{
+  "id": "irregular_present",
+  "name": "Irregular verbs: present",
+  "pattern": "Irregular endings you must know by heart",
+  "pattern_note": "The most-used verbs are irregular. Watch -ez forms: only vous êtes, vous faites, vous dites break the pattern.",
+  "cefr": "A2",
+  "unlock_cost": 200,
+  "prereq": [
+    "gender_traps"
+  ],
+  "items": [
+    {
+      "id": "irregular_present_vous_faites",
+      "chunk": "vous faites",
+      "word": "vous faites",
+      "translation": "you do / you make (formal)",
+      "example": "Qu'est-ce que vous faites ce soir ?",
+      "example_translation": "What are you doing tonight?",
+      "cloze": "Qu'est-ce que ___ ce soir ?",
+      "tiles": [
+        "Qu'est-ce",
+        "que",
+        "vous",
+        "faites",
+        "ce",
+        "soir"
+      ],
+      "distractor_tiles": [
+        "faisez",
+        "faisent"
+      ],
+      "notes": "Faire → vous faites (not «faisez»).",
+      "tags": [
+        "A2"
+      ],
+      "wrong": [
+        "vous faisez",
+        "vous faisent",
+        "vous fait"
+      ],
+      "strict": true
+    },
+    {
+      "id": "irregular_present_vous_dites",
+      "chunk": "vous dites",
+      "word": "vous dites",
+      "translation": "you say (formal)",
+      "example": "Avec moi, vous dites toujours la vérité.",
+      "example_translation": "With me, you always tell the truth.",
+      "cloze": "Avec moi, ___ toujours la vérité.",
+      "tiles": [
+        "Avec",
+        "moi",
+        "vous",
+        "dites",
+        "toujours",
+        "la",
+        "vérité"
+      ],
+      "distractor_tiles": [
+        "disez",
+        "disent"
+      ],
+      "notes": "Dire → vous dites (like vous faites, vous êtes).",
+      "tags": [
+        "A2"
+      ],
+      "wrong": [
+        "vous disez",
+        "vous disent",
+        "vous dit"
+      ],
+      "strict": true
+    },
+    {
+      "id": "irregular_present_ils_vont",
+      "chunk": "ils vont",
+      "word": "ils vont",
+      "translation": "they go",
+      "example": "Ce soir, ils vont au cinéma.",
+      "example_translation": "Tonight, they're going to the cinema.",
+      "cloze": "Ce soir, ___ au cinéma.",
+      "tiles": [
+        "Ce",
+        "soir",
+        "ils",
+        "vont",
+        "au",
+        "cinéma"
+      ],
+      "distractor_tiles": [
+        "allent",
+        "vais"
+      ],
+      "notes": "Aller → ils vont. Only 4 verbs have -ont: ils vont, ils ont, ils font, ils sont.",
+      "tags": [
+        "A2"
+      ],
+      "wrong": [
+        "ils allent",
+        "ils vais",
+        "ils vas"
+      ],
+      "strict": true
+    },
+    {
+      "id": "irregular_present_ils_prennent",
+      "chunk": "ils prennent",
+      "word": "ils prennent",
+      "translation": "they take",
+      "example": "Le matin, ils prennent le train de huit heures.",
+      "example_translation": "In the morning, they take the eight o'clock train.",
+      "cloze": "Le matin, ___ le train de huit heures.",
+      "tiles": [
+        "Le",
+        "matin",
+        "ils",
+        "prennent",
+        "le",
+        "train",
+        "de",
+        "huit",
+        "heures"
+      ],
+      "distractor_tiles": [
+        "prendent",
+        "il"
+      ],
+      "notes": "Prendre: il prend / ils prennent — the double n appears in the plural.",
+      "tags": [
+        "A2"
+      ],
+      "wrong": [
+        "ils prendent",
+        "ils prend",
+        "ils prenent"
+      ],
+      "strict": true
+    },
+    {
+      "id": "irregular_present_nous_faisons",
+      "chunk": "nous faisons",
+      "word": "nous faisons",
+      "translation": "we do / we make",
+      "example": "Le samedi, nous faisons les courses.",
+      "example_translation": "We do the shopping on Saturdays.",
+      "cloze": "Le samedi, ___ les courses.",
+      "tiles": [
+        "Le",
+        "samedi",
+        "nous",
+        "faisons",
+        "les",
+        "courses"
+      ],
+      "distractor_tiles": [
+        "faites",
+        "faissons"
+      ],
+      "notes": "Faire → nous faisons (pronounced «fe-zon», but written with -ai-).",
+      "tags": [
+        "A2"
+      ],
+      "wrong": [
+        "nous faissons",
+        "nous faites",
+        "nous fait"
+      ],
+      "strict": true
+    },
+    {
+      "id": "irregular_present_ils_veulent",
+      "chunk": "ils veulent",
+      "word": "ils veulent",
+      "translation": "they want",
+      "example": "Demain, ils veulent partir tôt.",
+      "example_translation": "Tomorrow, they want to leave early.",
+      "cloze": "Demain, ___ partir tôt.",
+      "tiles": [
+        "Demain",
+        "ils",
+        "veulent",
+        "partir",
+        "tôt"
+      ],
+      "distractor_tiles": [
+        "voulent",
+        "veux"
+      ],
+      "notes": "Vouloir: je veux / nous voulons / ils veulent — the stem changes in the plural.",
+      "tags": [
+        "A2"
+      ],
+      "wrong": [
+        "ils voulent",
+        "ils veut",
+        "ils veuillent"
+      ],
+      "strict": true
+    },
+    {
+      "id": "irregular_present_ils_peuvent",
+      "chunk": "ils peuvent",
+      "word": "ils peuvent",
+      "translation": "they can",
+      "example": "Demain, ils peuvent venir.",
+      "example_translation": "They can come tomorrow.",
+      "cloze": "Demain, ___ venir.",
+      "tiles": [
+        "Demain",
+        "ils",
+        "peuvent",
+        "venir"
+      ],
+      "distractor_tiles": [
+        "pouvent",
+        "il"
+      ],
+      "notes": "Pouvoir: je peux / nous pouvons / ils peuvent.",
+      "tags": [
+        "A2"
+      ],
+      "wrong": [
+        "ils pouvent",
+        "ils peut",
+        "ils puissent"
+      ],
+      "strict": true
+    },
+    {
+      "id": "irregular_present_vous_etes",
+      "chunk": "vous êtes",
+      "word": "vous êtes",
+      "translation": "you are (formal / plural)",
+      "example": "Merci, vous êtes très gentil.",
+      "example_translation": "Thanks, you are very kind.",
+      "cloze": "Merci, ___ très gentil.",
+      "tiles": [
+        "Merci",
+        "vous",
+        "êtes",
+        "très",
+        "gentil"
+      ],
+      "distractor_tiles": [
+        "étes",
+        "sont"
+      ],
+      "notes": "Être → vous êtes — keep the circumflex!",
+      "tags": [
+        "A2"
+      ],
+      "wrong": [
+        "vous étes",
+        "vous est",
+        "vous sont"
+      ],
+      "strict": true
+    }
+  ]
+}

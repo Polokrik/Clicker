@@ -7,11 +7,12 @@ import type { ExerciseProps } from './types'
 /** Tier 0 — QCM reconnaissance FR→EN, 4 choix (§4). */
 export function QcmExercise({ item, onAnswer }: ExerciseProps) {
   const choices = useMemo(() => {
+    if (item.wrong.length >= 3) return buildChoices(item.word, item.wrong, 3)
     const pool = Object.values(activePack.items)
       .filter((i) => i.id !== item.id)
       .map((i) => i.word)
     return buildChoices(item.word, pool, 3)
-  }, [item.id, item.word])
+  }, [item.id, item.word, item.wrong])
 
   return (
     <div className="exercise-card">

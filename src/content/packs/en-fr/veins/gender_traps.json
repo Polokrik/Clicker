@@ -1,0 +1,267 @@
+{
+  "id": "gender_traps",
+  "name": "Gender curveballs",
+  "pattern": "Learn the article WITH the noun",
+  "pattern_note": "The ending of a French noun is a hint, not a rule. Always memorise «un/une» together with the word.",
+  "cefr": "A2",
+  "unlock_cost": 0,
+  "prereq": [],
+  "items": [
+    {
+      "id": "gender_traps_problem",
+      "chunk": "un problème",
+      "word": "un problème",
+      "translation": "a problem",
+      "example": "Il y a un problème avec ma réservation.",
+      "example_translation": "There is a problem with my booking.",
+      "cloze": "Il y a ___ avec ma réservation.",
+      "tiles": [
+        "Il",
+        "y",
+        "a",
+        "un",
+        "problème",
+        "avec",
+        "ma",
+        "réservation"
+      ],
+      "distractor_tiles": [
+        "une",
+        "le"
+      ],
+      "notes": "Masculine despite the final -e: all Greek-origin -ème nouns (problème, système, thème…).",
+      "tags": [
+        "A2"
+      ],
+      "wrong": [
+        "une problème",
+        "la problème",
+        "des problème"
+      ],
+      "strict": true
+    },
+    {
+      "id": "gender_traps_image",
+      "chunk": "une image",
+      "word": "une image",
+      "translation": "a picture",
+      "example": "Je cherche une image pour mon exposé.",
+      "example_translation": "I'm looking for a picture for my presentation.",
+      "cloze": "Je cherche ___ pour mon exposé.",
+      "tiles": [
+        "Je",
+        "cherche",
+        "une",
+        "image",
+        "pour",
+        "mon",
+        "exposé"
+      ],
+      "distractor_tiles": [
+        "un",
+        "le"
+      ],
+      "notes": "Feminine: image, page, plage, cage, nage. Don't confuse with the masculine -age family.",
+      "tags": [
+        "A2"
+      ],
+      "wrong": [
+        "un image",
+        "le image",
+        "des image"
+      ],
+      "strict": true
+    },
+    {
+      "id": "gender_traps_trip",
+      "chunk": "un voyage",
+      "word": "un voyage",
+      "translation": "a trip",
+      "example": "Nous faisons un voyage en Italie en juillet.",
+      "example_translation": "We're taking a trip to Italy in July.",
+      "cloze": "Nous faisons ___ en Italie en juillet.",
+      "tiles": [
+        "Nous",
+        "faisons",
+        "un",
+        "voyage",
+        "en",
+        "Italie",
+        "en",
+        "juillet"
+      ],
+      "distractor_tiles": [
+        "une",
+        "la"
+      ],
+      "notes": "Masculine: -age is masculine (voyage, garage, message, fromage) — except image, page, plage, cage, nage.",
+      "tags": [
+        "A2"
+      ],
+      "wrong": [
+        "une voyage",
+        "la voyage",
+        "des voyage"
+      ],
+      "strict": true
+    },
+    {
+      "id": "gender_traps_beach",
+      "chunk": "une plage",
+      "word": "une plage",
+      "translation": "a beach",
+      "example": "Il y a une plage près de l'hôtel.",
+      "example_translation": "There is a beach near the hotel.",
+      "cloze": "Il y a ___ près de l'hôtel.",
+      "tiles": [
+        "Il",
+        "y",
+        "a",
+        "une",
+        "plage",
+        "près",
+        "de",
+        "l'hôtel"
+      ],
+      "distractor_tiles": [
+        "un",
+        "la"
+      ],
+      "notes": "One of the feminine -age exceptions.",
+      "tags": [
+        "A2"
+      ],
+      "wrong": [
+        "un plage",
+        "le plage",
+        "des plage"
+      ],
+      "strict": true
+    },
+    {
+      "id": "gender_traps_garage",
+      "chunk": "un garage",
+      "word": "un garage",
+      "translation": "a garage",
+      "example": "Ma voiture est dans un garage.",
+      "example_translation": "My car is in a garage.",
+      "cloze": "Ma voiture est dans ___.",
+      "tiles": [
+        "Ma",
+        "voiture",
+        "est",
+        "dans",
+        "un",
+        "garage"
+      ],
+      "distractor_tiles": [
+        "une",
+        "le"
+      ],
+      "notes": "Regular masculine -age.",
+      "tags": [
+        "A2"
+      ],
+      "wrong": [
+        "une garage",
+        "la garage",
+        "des garage"
+      ],
+      "strict": true
+    },
+    {
+      "id": "gender_traps_fire",
+      "chunk": "un incendie",
+      "word": "un incendie",
+      "translation": "a fire (blaze)",
+      "example": "Il y a eu un incendie dans le quartier.",
+      "example_translation": "There was a fire in the neighbourhood.",
+      "cloze": "Il y a eu ___ dans le quartier.",
+      "tiles": [
+        "Il",
+        "y",
+        "a",
+        "eu",
+        "un",
+        "incendie",
+        "dans",
+        "le",
+        "quartier"
+      ],
+      "distractor_tiles": [
+        "une",
+        "hier"
+      ],
+      "notes": "Masculine despite the final -e (also: un incendie, un silence, un sourire).",
+      "tags": [
+        "A2"
+      ],
+      "wrong": [
+        "une incendie",
+        "la incendie",
+        "des incendie"
+      ],
+      "strict": true
+    },
+    {
+      "id": "gender_traps_person",
+      "chunk": "une personne",
+      "word": "une personne",
+      "translation": "a person",
+      "example": "C'est une personne très gentille.",
+      "example_translation": "He/She is a very kind person.",
+      "cloze": "C'est ___ très gentille.",
+      "tiles": [
+        "C'est",
+        "une",
+        "personne",
+        "très",
+        "gentille"
+      ],
+      "distractor_tiles": [
+        "un",
+        "le"
+      ],
+      "notes": "Always feminine — even when the person is a man. Same for «une victime», «une star».",
+      "tags": [
+        "A2"
+      ],
+      "wrong": [
+        "un personne",
+        "le personne",
+        "des personne"
+      ],
+      "strict": true
+    },
+    {
+      "id": "gender_traps_page",
+      "chunk": "une page",
+      "word": "une page",
+      "translation": "a page",
+      "example": "Lisez une page par jour.",
+      "example_translation": "Read one page a day.",
+      "cloze": "Lisez ___ par jour.",
+      "tiles": [
+        "Lisez",
+        "une",
+        "page",
+        "par",
+        "jour"
+      ],
+      "distractor_tiles": [
+        "un",
+        "la"
+      ],
+      "notes": "Feminine (une page) — but «un page» exists too: a page boy! Context is everything.",
+      "tags": [
+        "A2"
+      ],
+      "wrong": [
+        "un page",
+        "le page",
+        "des page"
+      ],
+      "strict": true
+    }
+  ]
+}

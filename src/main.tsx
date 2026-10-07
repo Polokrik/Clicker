@@ -5,6 +5,7 @@ import './index.css'
 import App from './App.tsx'
 import { useGame } from './store/gameStore'
 import { activePack, packs } from './content'
+import { STR } from './i18n/strings'
 
 registerSW({ immediate: true })
 
@@ -14,6 +15,8 @@ declare global {
     __forge?: { useGame: typeof useGame; activePack: typeof activePack; packs: typeof packs }
   }
 }
+document.documentElement.lang = activePack.sourceLang
+document.title = STR.appName
 window.__forge = { useGame, activePack, packs }
 
 createRoot(document.getElementById('root')!).render(

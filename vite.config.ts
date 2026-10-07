@@ -12,11 +12,11 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       manifest: {
-        name: 'La Forge des Mots',
+        name: 'Word Forge',
         short_name: 'Forge',
         description:
-          "Apprends l'anglais en forgeant des mots — répétition espacée FSRS.",
-        lang: 'fr',
+          'Learn languages by forging words — FSRS spaced repetition.',
+        lang: 'en',
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#0b0e14',

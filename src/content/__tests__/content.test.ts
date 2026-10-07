@@ -69,3 +69,30 @@ describe('contenu — validation du pack fr-en', () => {
     expect(() => loadPacks()).not.toThrow()
   })
 })
+
+describe('contenu — pack en-fr (grammaire B1)', () => {
+  const pack = loadPacks()['en-fr']
+
+  it('existe, anglais → français, voix fr-FR', () => {
+    expect(pack.sourceLang).toBe('en')
+    expect(pack.targetLang).toBe('fr')
+    expect(pack.ttsLang).toBe('fr-FR')
+  })
+
+  it('chaque item grammatical est strict, a un cloze à un trou et 3 mauvaises réponses', () => {
+    for (const item of Object.values(pack.items)) {
+      expect(item.strict, item.id).toBe(true)
+      expect(item.cloze.split('___'), item.id).toHaveLength(2)
+      expect(item.example, item.id).toContain(item.word)
+      expect(item.wrong.length, item.id).toBeGreaterThanOrEqual(3)
+      expect(item.wrong, item.id).not.toContain(item.word)
+    }
+  })
+
+  it('les tuiles reconstituent la phrase d’exemple', () => {
+    for (const item of Object.values(pack.items)) {
+      const strip = (s: string) => s.replace(/[.,!?;:«»]/g, '').replace(/\s+/g, ' ').trim()
+      expect(item.tiles.join(' '), item.id).toBe(strip(item.example))
+    }
+  })
+})
