@@ -7,7 +7,7 @@ import { ExerciseView } from '../exercises/ExerciseView'
 import type { ExerciseResult } from '../exercises/types'
 import { FeedbackCard, type Feedback } from '../components/FeedbackCard'
 import { SparkBurst } from '../components/SparkBurst'
-import { Ingot } from '../components/Ingot'
+import { Miner } from '../components/Miner'
 
 /** Écran principal : la Frappe (§2, boucle courte). */
 export function ForgeScreen({ onOpenVeins }: { onOpenVeins: () => void }) {
@@ -72,11 +72,11 @@ export function ForgeScreen({ onOpenVeins }: { onOpenVeins: () => void }) {
           onAnswer={handleAnswer}
         />
       ) : (
-        <div className="resting">
-          <Ingot heat={8} height={44} />
+        <div className="resting forge-stage">
+          <Miner pose="idle" height={180} />
           {firstVein ? (
             <>
-              <h2 style={{ marginTop: 18 }}>{STR.forge.firstTitle}</h2>
+              <h2>{STR.forge.firstTitle}</h2>
               <p>{STR.forge.firstHint}</p>
               <button className="primary-btn" onClick={() => startLesson(firstVein.id)}>
                 {STR.forge.firstVein}
@@ -85,7 +85,7 @@ export function ForgeScreen({ onOpenVeins }: { onOpenVeins: () => void }) {
             </>
           ) : (
             <>
-              <h2 style={{ marginTop: 18 }}>{STR.forge.resting}</h2>
+              <h2>{STR.forge.resting}</h2>
               <p>{STR.forge.restingHint}</p>
               <button className="primary-btn" onClick={onOpenVeins}>
                 {STR.forge.openVein}

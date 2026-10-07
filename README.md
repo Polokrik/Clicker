@@ -68,6 +68,12 @@ déposer un nouveau dossier de pack, zéro changement de code.
   items Trempés+ (enclume, plafond hors-ligne étendu par la cheminée).
   Les upgrades n'achètent jamais de la connaissance.
 
+### Illustrations
+
+Les PNG d'origine sont dans `art-src/` (hors site déployé). `python3 scripts/optimize-art.py`
+(Pillow) produit les WebP de `public/art/` et les icônes PWA. Brief de génération :
+`docs/assets-brief.md`.
+
 ### Debug
 
 `window.__forge` expose le store (`useGame.getState()`) et les packs en console.

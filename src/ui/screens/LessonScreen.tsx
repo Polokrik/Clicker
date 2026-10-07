@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react'
 import { useGame, VEIN_COMPLETE_BONUS } from '../../store/gameStore'
 import { activePack } from '../../content'
+import { Miner } from '../components/Miner'
 import { speak, ttsAvailable } from '../../audio/tts'
 import { STR } from '../../i18n/strings'
 import { ExerciseView } from '../exercises/ExerciseView'
@@ -40,7 +41,10 @@ export function LessonScreen() {
     return (
       <div className="screen">
         <div className="resting">
-          <h2>⛏ {STR.lesson.done}</h2>
+          <div className="feedback-miner">
+            <Miner pose="cheer" height={190} />
+          </div>
+          <h2>{STR.lesson.done}</h2>
           <p>{STR.lesson.doneHint}</p>
           <div className="feedback ok" style={{ marginBottom: 16 }}>
             <div className="gain">

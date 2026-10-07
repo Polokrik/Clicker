@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { STR } from '../i18n/strings'
 import { Ingot } from './components/Ingot'
+import { Miner, type MinerPose } from './components/Miner'
 
 const SEEN_KEY = 'forge-tutorial-v1'
 
@@ -35,7 +36,9 @@ function StepVisual({ step }: { step: number }) {
     )
   }
   if (step === 4) return <div className="tuto-sparks" aria-hidden>✦ 120</div>
-  return <Ingot heat={step === 2 ? 90 : step === 1 ? 40 : 8} height={44} />
+  if (step === 0) return <Ingot heat={85} height={96} />
+  const pose: MinerPose = step === 2 ? 'happy' : 'idle'
+  return <Miner pose={pose} height={140} />
 }
 
 export function Tutorial({ onClose }: { onClose: () => void }) {

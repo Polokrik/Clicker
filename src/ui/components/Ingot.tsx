@@ -1,6 +1,8 @@
+import { art } from '../art'
+
 /**
- * Lingot en clip-path dont la couleur HSL projette la chaleur (§3.3, §7) :
- * 0 % = acier froid bleuté, 100 % = braise éclatante.
+ * Lingot illustré. La chaleur pilote la couleur : froid = acier désaturé et
+ * assombri, chaud = or/braise éclatant avec une lueur (§3.3, §7).
  */
 export function Ingot({
   heat,
@@ -12,26 +14,16 @@ export function Ingot({
   label?: string
 }) {
   const t = Math.max(0, Math.min(100, heat)) / 100
-  const hue = 220 - t * 185 // 220 (acier) → 35 (braise)
-  const sat = 15 + t * 75
-  const light = 22 + t * 38
-  const glow = t > 0.5 ? `0 0 ${8 + t * 14}px hsl(${hue} ${sat}% ${light}% / 0.55)` : 'none'
+  const glow = t > 0.5 ? ` drop-shadow(0 0 ${6 + t * 12}px rgb(255 140 50 / ${0.25 + t * 0.4}))` : ''
   return (
-    <div
-      className="ingot"
-      style={{
-        height,
-        background: `linear-gradient(180deg,
-          hsl(${hue} ${sat}% ${Math.min(72, light + 12)}%),
-          hsl(${hue} ${sat}% ${light}%))`,
-        boxShadow: glow,
-      }}
-    >
-      {label && (
-        <span style={{ fontSize: '0.7rem', fontWeight: 700, color: t > 0.45 ? '#1a0d05' : '#9aa5b5' }}>
-          {label}
-        </span>
-      )}
-    </div>
+    <span className="ingot" style={{ height, width: height }}>
+      <img
+        src={art('ingot.webp')}
+        alt=""
+        draggable={false}
+        style={{ filter: `grayscale(${1 - t}) brightness(${0.6 + t * 0.4})${glow}` }}
+      />
+      {label && <span className="ingot-label">{label}</span>}
+    </span>
   )
 }

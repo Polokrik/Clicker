@@ -118,14 +118,43 @@ button {
   padding: 1px 5px;
 }
 
-/* ── Lingot ─────────────────────────────────────────────────────────────── */
-.ingot {
-  clip-path: polygon(8% 0%, 92% 0%, 100% 100%, 0% 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.6s, box-shadow 0.6s;
+/* ── Lingot illustré ───────────────────────────────────────────────────── */
+.ingot { position: relative; display: inline-flex; align-items: center; justify-content: center; flex: none; }
+.ingot img { width: 100%; height: 100%; object-fit: contain; }
+.ingot-label {
+  position: absolute; font-size: 0.7rem; font-weight: 700; color: #2a1405;
+  text-shadow: 0 1px 0 rgb(255 255 255 / 0.35);
 }
+
+/* ── Mineur (mascotte) ──────────────────────────────────────────────────── */
+.miner { display: block; user-select: none; -webkit-user-drag: none; transform-origin: 50% 100%; }
+.miner-idle { animation: miner-breathe 3.2s ease-in-out infinite; }
+.miner-happy, .miner-cheer { animation: miner-hop 0.6s cubic-bezier(0.3, 1.6, 0.5, 1) both; }
+.miner-oops { animation: miner-shake 0.5s ease-in-out both; }
+@keyframes miner-breathe { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(1.025) scaleX(0.99); } }
+@keyframes miner-hop {
+  0% { transform: translateY(0) scale(1, 1); }
+  30% { transform: translateY(-14px) scale(0.97, 1.05); }
+  60% { transform: translateY(0) scale(1.05, 0.95); }
+  100% { transform: translateY(0) scale(1, 1); }
+}
+@keyframes miner-shake { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(-3deg); } 75% { transform: rotate(3deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .miner { animation: none !important; }
+}
+
+/* ── Écran d'accueil de la forge : scène de mine + mineur ──────────────── */
+.forge-stage {
+  position: relative;
+  margin: -16px -16px 0;
+  padding: 0 16px 16px;
+  background: url('/art/forge_hero.webp') top center / 100% auto no-repeat;
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  min-height: 100%;
+}
+.forge-stage .miner { margin-top: min(27vh, 230px); position: relative; }
+.forge-stage h2 { margin-top: 6px; }
+.feedback-miner { display: flex; justify-content: center; margin: -4px 0 4px; }
 
 /* ── Forge ──────────────────────────────────────────────────────────────── */
 .forge-status {
