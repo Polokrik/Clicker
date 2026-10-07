@@ -12,7 +12,7 @@ const UPGRADES: { id: UpgradeId; icon: string }[] = [
 ]
 
 /** L'Atelier : upgrades, alliages (teaser), sauvegarde, réglages (§7). */
-export function WorkshopScreen() {
+export function WorkshopScreen({ onReplayTutorial }: { onReplayTutorial: () => void }) {
   const { player, buyUpgrade, importSave, setNewPerDay } = useGame()
   const fileInput = useRef<HTMLInputElement>(null)
 
@@ -119,6 +119,13 @@ export function WorkshopScreen() {
           </select>
         </section>
       )}
+
+      <section className="shop-section">
+        <h2>{STR.workshop.howTo}</h2>
+        <button className="ghost-btn" onClick={onReplayTutorial}>
+          {STR.workshop.replayTutorial}
+        </button>
+      </section>
 
       <section className="shop-section">
         <h2>{STR.workshop.save}</h2>

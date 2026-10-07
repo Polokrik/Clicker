@@ -25,7 +25,7 @@ export function VeinsScreen() {
               <div key={veinId} className={`vein-card${unlocked ? '' : ' locked'}`}>
                 <h3>{vein.name}</h3>
                 <div className="pattern">
-                  {STR.veins.pattern} : {vein.pattern}
+                  {STR.veins.pattern}{STR.colon} {vein.pattern}
                 </div>
                 <div className="meta">
                   <span>{vein.cefr}</span>

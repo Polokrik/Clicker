@@ -2,7 +2,9 @@ import { useEffect, useMemo, useState } from 'react'
 import { useGame } from './store/gameStore'
 import { passiveRate } from './engine/economy'
 import { isDue } from './engine/scheduler'
-import { STR } from './i18n/strings'
+import { STR, UI_LANG } from './i18n/strings'
+import { Tutorial, tutorialSeen } from './ui/Tutorial'
+import { TabIcon } from './ui/components/TabIcon'
 import { ForgeScreen } from './ui/screens/ForgeScreen'
 import { RackScreen } from './ui/screens/RackScreen'
 import { VeinsScreen } from './ui/screens/VeinsScreen'
@@ -12,16 +14,12 @@ import { WelcomeBackModal } from './ui/WelcomeBackModal'
 
 type Tab = 'forge' | 'rack' | 'veins' | 'workshop'
 
-const TABS: { id: Tab; icon: string }[] = [
-  { id: 'forge', icon: '🔨' },
-  { id: 'rack', icon: '🧱' },
-  { id: 'veins', icon: '⛏' },
-  { id: 'workshop', icon: '⚒' },
-]
+const TABS: { id: Tab }[] = [{ id: 'forge' }, { id: 'rack' }, { id: 'veins' }, { id: 'workshop' }]
 
 export default function App() {
   const { loaded, init, player, lesson, tickPassive } = useGame()
   const [tab, setTab] = useState<Tab>('forge')
+  const [tutorialOpen, setTutorialOpen] = useState(() => !tutorialSeen())
 
   useEffect(() => {
     void init()
@@ -59,7 +57,7 @@ export default function App() {
         <span className="hud-title">{STR.appName}</span>
         <span>
           <span className="hud-sparks">
-            ✦ {Math.floor(player.sparks).toLocaleString('fr-FR')}
+            ✦ {Math.floor(player.sparks).toLocaleString(UI_LANG)}
           </span>
           {rate > 0 && (
             <span className="hud-rate">
@@ -77,19 +75,19 @@ export default function App() {
           {tab === 'forge' && <ForgeScreen onOpenVeins={() => setTab('veins')} />}
           {tab === 'rack' && <RackScreen />}
           {tab === 'veins' && <VeinsScreen />}
-          {tab === 'workshop' && <WorkshopScreen />}
+          {tab === 'workshop' && <WorkshopScreen onReplayTutorial={() => setTutorialOpen(true)} />}
         </>
       )}
 
       {!lesson && (
         <nav className="tabbar">
-          {TABS.map(({ id, icon }) => (
+          {TABS.map(({ id }) => (
             <button
               key={id}
               className={tab === id ? 'active' : ''}
               onClick={() => setTab(id)}
             >
-              <span className="tab-icon">{icon}</span>
+              <TabIcon name={id} />
               {STR.tabs[id]}
               {id === 'forge' && dueCount > 0 && <span className="badge">{dueCount}</span>}
             </button>
@@ -97,7 +95,11 @@ export default function App() {
         </nav>
       )}
 
-      <WelcomeBackModal />
+      {tutorialOpen ? (
+        <Tutorial onClose={() => setTutorialOpen(false)} />
+      ) : (
+        <WelcomeBackModal />
+      )}
     </div>
   )
 }

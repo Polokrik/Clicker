@@ -11,10 +11,16 @@ import { Ingot } from '../components/Ingot'
 
 /** Écran principal : la Frappe (§2, boucle courte). */
 export function ForgeScreen({ onOpenVeins }: { onOpenVeins: () => void }) {
-  const { queue, exercise, servedAt, combo, player, answerForge, refreshQueue } =
+  const { queue, exercise, servedAt, combo, player, answerForge, refreshQueue, startLesson } =
     useGame()
   const [feedback, setFeedback] = useState<Feedback | null>(null)
   const [burst, setBurst] = useState(0)
+
+  // Tout premier lancement : aucun lingot, aucune veine terminée → un seul tap pour démarrer.
+  const firstVein =
+    Object.keys(player.items).length === 0 && player.completedVeins.length === 0
+      ? (player.unlockedVeins.map((id) => activePack.veins[id]).find(Boolean) ?? null)
+      : null
 
   const head = queue[0]
   const item = head ? activePack.items[head.id] : null
@@ -68,12 +74,25 @@ export function ForgeScreen({ onOpenVeins }: { onOpenVeins: () => void }) {
       ) : (
         <div className="resting">
           <Ingot heat={8} height={44} />
-          <h2 style={{ marginTop: 18 }}>{STR.forge.resting}</h2>
-          <p>{STR.forge.restingHint}</p>
-          <button className="primary-btn" onClick={onOpenVeins}>
-            {STR.forge.openVein}
-          </button>
-          <p style={{ marginTop: 14 }}>{STR.forge.close}</p>
+          {firstVein ? (
+            <>
+              <h2 style={{ marginTop: 18 }}>{STR.forge.firstTitle}</h2>
+              <p>{STR.forge.firstHint}</p>
+              <button className="primary-btn" onClick={() => startLesson(firstVein.id)}>
+                {STR.forge.firstVein}
+              </button>
+              <p style={{ marginTop: 14 }}>{firstVein.name}</p>
+            </>
+          ) : (
+            <>
+              <h2 style={{ marginTop: 18 }}>{STR.forge.resting}</h2>
+              <p>{STR.forge.restingHint}</p>
+              <button className="primary-btn" onClick={onOpenVeins}>
+                {STR.forge.openVein}
+              </button>
+              <p style={{ marginTop: 14 }}>{STR.forge.close}</p>
+            </>
+          )}
         </div>
       )}
     </div>

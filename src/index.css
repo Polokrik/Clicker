@@ -99,14 +99,14 @@ button {
   position: relative;
   padding: 10px 0 12px;
   font-size: 0.72rem;
-  color: var(--steel-400);
+  color: #8793a6; /* contraste ≥ 5:1 sur fond acier */
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 3px;
 }
 .tabbar button.active { color: var(--gold-300); }
-.tabbar .tab-icon { font-size: 1.25rem; line-height: 1; }
+.tabbar .tab-icon { display: block; }
 .tabbar .badge {
   position: absolute;
   transform: translate(16px, -4px);
@@ -459,7 +459,7 @@ button {
   font-size: 0.9rem;
   letter-spacing: 0.1em;
 }
-.lesson-header .quit { color: var(--steel-400); font-size: 0.8rem; }
+.lesson-header .quit { color: var(--steel-200); font-size: 0.85rem; white-space: nowrap; padding: 8px 0 8px 12px; }
 .prospect-card {
   background: var(--steel-800);
   border: 1px solid var(--steel-700);
@@ -545,3 +545,15 @@ button {
   .spark { display: none; }
   * { transition: none !important; animation: none !important; }
 }
+
+/* ── Tutoriel ───────────────────────────────────────────────────────────── */
+.tuto { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.tuto .ingot { margin-bottom: 14px; }
+.tuto p { color: var(--steel-200); line-height: 1.55; margin-bottom: 18px; max-width: 34ch; }
+.tuto .primary-btn { width: 100%; }
+.tuto-skip { margin-top: 8px; border: none; color: var(--steel-200); }
+.tuto-dots { display: flex; gap: 6px; margin-bottom: 16px; }
+.tuto-dots span { width: 6px; height: 6px; border-radius: 50%; background: var(--steel-600); }
+.tuto-dots span.on { background: var(--gold-300); }
+.tuto-heat { width: 100%; display: grid; gap: 10px; margin-bottom: 18px; }
+.tuto-sparks { font-family: var(--font-mono); font-size: 2rem; color: var(--gold-300); margin-bottom: 14px; }
