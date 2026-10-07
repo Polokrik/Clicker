@@ -17,6 +17,24 @@ npm run build      # production (PWA installable, 100 % offline-first)
 npm test           # vitest (moteur, file, économie, contenu)
 ```
 
+## Installer sur Android (sans ordinateur)
+
+Le jeu est une **PWA** déployée sur GitHub Pages par la CI
+(`.github/workflows/deploy.yml`) :
+
+1. URL : `https://polokrik.github.io/Clicker/`
+   (aussi dans GitHub Mobile : repo → Actions → dernier run « Deploy to GitHub
+   Pages » → lien `github-pages`).
+2. Ouvrir l'URL dans **Chrome** sur Android.
+3. Menu ⋮ → **Installer l'application** (ou « Ajouter à l'écran d'accueil »).
+4. L'icône « Forge » apparaît sur l'écran d'accueil ; l'app fonctionne ensuite
+   hors-ligne et se met à jour toute seule à chaque déploiement.
+
+Prérequis : Settings → Pages → Source = « GitHub Actions ». Le déploiement se
+déclenche à chaque push sur `main` (ou à la main : Actions → Run workflow).
+Les données de jeu restent dans le navigateur : utiliser l'export JSON avant
+de désinstaller.
+
 ## Architecture
 
 | Dossier | Rôle |
