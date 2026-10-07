@@ -1,4 +1,4 @@
-import { get, set } from 'idb-keyval'
+import { del, get, set } from 'idb-keyval'
 import type { PlayerState } from '../engine/types'
 import { activePackId } from '../content'
 
@@ -29,9 +29,12 @@ export async function loadSave(): Promise<PlayerState | null> {
 }
 
 let saveChain: Promise<void> = Promise.resolve()
+// Pendant une réinitialisation, plus aucune écriture (un tick pourrait ressusciter la sauvegarde).
+let frozen = false
 
 /** Sauvegarde sérialisée (les appels s'enchaînent, pas d'écriture concurrente). */
 export function persistSave(player: PlayerState): Promise<void> {
+  if (frozen) return saveChain
   saveChain = saveChain.then(() =>
     set(SAVE_KEY, {
       version: SAVE_VERSION,
@@ -67,4 +70,28 @@ export function parseImportedSave(json: string): PlayerState {
     throw new Error('Fichier de sauvegarde invalide')
   }
   return p
+}
+
+/**
+ * Efface la sauvegarde du pack actif. `everything` efface aussi toutes les
+ * autres langues, le choix de langue, le tutoriel et les astuces : l'app
+ * repart comme au tout premier lancement.
+ */
+export async function resetSave(everything: boolean, allPackIds: string[]): Promise<void> {
+  frozen = true
+  await saveChain
+  const keys = everything
+    ? ['forge-save-v1', ...allPackIds.map((id) => `forge-save-v1:${id}`)]
+    : [SAVE_KEY]
+  await Promise.all(keys.map((k) => del(k).catch(() => undefined)))
+  if (everything) {
+    try {
+      for (const k of Object.keys(localStorage)) {
+        if (k.startsWith('forge-')) localStorage.removeItem(k)
+      }
+    } catch {
+      // stockage indisponible : rien d'autre à effacer
+    }
+  }
+  location.reload()
 }

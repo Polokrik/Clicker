@@ -1,7 +1,7 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { useGame } from '../../store/gameStore'
 import { UPGRADE_COSTS, type UpgradeId } from '../../engine/economy'
-import { exportSave } from '../../store/persist'
+import { exportSave, resetSave } from '../../store/persist'
 import { STR } from '../../i18n/strings'
 import { activePackId, packs, switchPack } from '../../content'
 import { ScreenTip } from '../components/ScreenTip'
@@ -21,6 +21,7 @@ export function WorkshopScreen({
   onOpenPlacement: () => void
 }) {
   const { player, buyUpgrade, importSave, setNewPerDay } = useGame()
+  const [confirmReset, setConfirmReset] = useState<'pack' | 'all' | null>(null)
   const fileInput = useRef<HTMLInputElement>(null)
 
   const retention =
@@ -164,6 +165,41 @@ export function WorkshopScreen({
           />
         </div>
       </section>
+
+      <section className="shop-section">
+        <h2>{STR.workshop.reset}</h2>
+        <div style={{ display: 'grid', gap: 10 }}>
+          <button className="ghost-btn danger" onClick={() => setConfirmReset('pack')}>
+            {STR.workshop.resetPack}
+          </button>
+          <button className="ghost-btn danger" onClick={() => setConfirmReset('all')}>
+            {STR.workshop.resetAll}
+          </button>
+        </div>
+      </section>
+
+      {confirmReset && (
+        <div className="modal-backdrop" role="alertdialog" aria-modal="true">
+          <div className="modal">
+            <h2>{STR.workshop.resetConfirmTitle}</h2>
+            <p className="muted" style={{ marginBottom: 16 }}>
+              {confirmReset === 'pack' ? STR.workshop.resetPackBody : STR.workshop.resetAllBody}{' '}
+              {STR.workshop.resetHint}
+            </p>
+            <div style={{ display: 'grid', gap: 10 }}>
+              <button
+                className="primary-btn danger"
+                onClick={() => void resetSave(confirmReset === 'all', Object.keys(packs))}
+              >
+                {STR.workshop.resetConfirm}
+              </button>
+              <button className="ghost-btn" onClick={() => setConfirmReset(null)}>
+                {STR.workshop.cancel}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

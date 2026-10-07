@@ -663,3 +663,6 @@ button {
 .lang-pair { font-family: var(--font-mono); font-size: 0.72rem; color: var(--ember-300); letter-spacing: 0.08em; }
 .lang-name { font-size: 1.1rem; font-weight: 700; }
 .lang-sub { font-size: 0.85rem; color: var(--steel-200); }
+
+.ghost-btn.danger { color: #ff8a8d; border-color: rgb(229 72 77 / 0.5); }
+.primary-btn.danger { background: var(--danger); color: #fff; }
