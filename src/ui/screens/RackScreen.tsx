@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react'
 import { useGame } from '../../store/gameStore'
 import { activePack } from '../../content'
 import { heat, reviveCard } from '../../engine/scheduler'
-import { itemStatus, STATUS_RANK, veinMastery, type ItemStatus } from '../../engine/mastery'
+import { itemStatus, STATUS_RANK, veinMastery } from '../../engine/mastery'
 import { speak, ttsAvailable } from '../../audio/tts'
 import { STR, UI_LANG } from '../../i18n/strings'
 import { Ingot } from '../components/Ingot'
@@ -61,7 +61,7 @@ export function RackScreen() {
         {rules.length > 0 && (
           <>
             <div className="status-summary">
-              {(['due', 'shaky', 'solid'] as ItemStatus[]).map((st) => (
+              {(['due', 'shaky', 'solid'] as const).map((st) => (
                 <span key={st} className={`status-chip ${st}`}>
                   {totals[st]} {STR.rack.status[st]}
                 </span>
