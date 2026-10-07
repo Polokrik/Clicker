@@ -648,3 +648,18 @@ button {
 .placement-level strong.none { font-family: var(--font-body); font-size: 1rem; font-weight: 600; }
 .status-dot.new { background: var(--steel-400); }
 .rack-cell.new .cell-status { color: var(--steel-200); }
+
+/* ── Choix de la langue (premier lancement) ─────────────────────────────── */
+.lang-picker { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 6px; }
+.lang-picker h1 { font-family: var(--font-display); color: var(--gold-500); letter-spacing: 0.12em; text-transform: uppercase; font-size: 1.5rem; margin-top: 8px; }
+.lang-title { color: var(--steel-200); font-size: 0.9rem; margin-bottom: 18px; }
+.lang-options { width: 100%; display: grid; gap: 12px; }
+.lang-option {
+  width: 100%; text-align: left; padding: 16px; border-radius: 14px;
+  background: var(--steel-800); border: 1px solid var(--steel-600);
+  display: grid; gap: 2px;
+}
+.lang-option:active { border-color: var(--ember-500); }
+.lang-pair { font-family: var(--font-mono); font-size: 0.72rem; color: var(--ember-300); letter-spacing: 0.08em; }
+.lang-name { font-size: 1.1rem; font-weight: 700; }
+.lang-sub { font-size: 0.85rem; color: var(--steel-200); }

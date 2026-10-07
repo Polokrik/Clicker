@@ -84,13 +84,27 @@ export const activePackId: string =
   startId && packs[startId] ? startId : packs[DEFAULT_PACK_ID] ? DEFAULT_PACK_ID : Object.keys(packs)[0]
 export const activePack: Pack = packs[activePackId]
 
-/** Change de pack : mémorise le choix puis recharge (état et textes liés au pack). */
-export function switchPack(id: string): void {
-  if (!packs[id] || id === activePackId) return
+/** Vrai au tout premier lancement (aucun choix mémorisé) : l'app propose alors la langue. */
+export function needsLanguageChoice(): boolean {
+  try {
+    return localStorage.getItem(PACK_KEY) === null
+  } catch {
+    return false // stockage indisponible : inutile de redemander à chaque lancement
+  }
+}
+
+/** Mémorise le pack choisi puis recharge (état et textes liés au pack). */
+export function choosePack(id: string): void {
+  if (!packs[id]) return
   try {
     localStorage.setItem(PACK_KEY, id)
   } catch {
     // stockage indisponible : le choix ne survivra pas au rechargement
   }
   location.reload()
+}
+
+/** Change de pack depuis les réglages. */
+export function switchPack(id: string): void {
+  if (id !== activePackId) choosePack(id)
 }

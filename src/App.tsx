@@ -4,6 +4,8 @@ import { passiveRate } from './engine/economy'
 import { isDue } from './engine/scheduler'
 import { STR, UI_LANG } from './i18n/strings'
 import { Tutorial, tutorialSeen } from './ui/Tutorial'
+import { LanguagePicker } from './ui/LanguagePicker'
+import { needsLanguageChoice } from './content'
 import { TabIcon } from './ui/components/TabIcon'
 import { ForgeScreen } from './ui/screens/ForgeScreen'
 import { RackScreen } from './ui/screens/RackScreen'
@@ -20,6 +22,7 @@ const TABS: { id: Tab }[] = [{ id: 'forge' }, { id: 'rack' }, { id: 'veins' }, {
 export default function App() {
   const { loaded, init, player, lesson, tickPassive } = useGame()
   const [tab, setTab] = useState<Tab>('forge')
+  const [chooseLanguage] = useState(needsLanguageChoice)
   const [placementOpen, setPlacementOpen] = useState(false)
   const [tutorialOpen, setTutorialOpen] = useState(() => !tutorialSeen())
 
@@ -42,6 +45,8 @@ export default function App() {
     () => Object.values(player.items).filter((i) => isDue(i)).length,
     [player.items],
   )
+
+  if (chooseLanguage) return <LanguagePicker />
 
   if (!loaded) {
     return (
