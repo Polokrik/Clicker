@@ -1,0 +1,279 @@
+{
+  "id": "pronouns_y_en",
+  "name": "Pronouns y & en",
+  "pattern": "y = à/dans + thing/place · en = de + thing, or a quantity",
+  "pattern_note": "«Y» replaces à + thing or a place. «En» replaces de + thing, or a quantity. They come before the verb.",
+  "cefr": "B1",
+  "unlock_cost": 450,
+  "prereq": [
+    "partitives"
+  ],
+  "items": [
+    {
+      "id": "pronouns_y_en_jy_vais",
+      "chunk": "j'y vais",
+      "word": "j'y vais",
+      "translation": "I go there",
+      "example": "Le marché ? Oui, j'y vais demain.",
+      "example_translation": "The market? Yes, I'm going there tomorrow.",
+      "cloze": "Le marché ? Oui, ___ demain.",
+      "tiles": [
+        "Le",
+        "marché",
+        "Oui",
+        "j'y",
+        "vais",
+        "demain"
+      ],
+      "distractor_tiles": [
+        "en"
+      ],
+      "notes": "«Y» replaces a place: aller à → y aller. Before a vowel: j'y.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "j'en vais",
+        "je y vais",
+        "j'y va"
+      ],
+      "strict": true,
+      "allowSpot": true,
+      "phonetic": "ʒi vɛ"
+    },
+    {
+      "id": "pronouns_y_en_jen_veux",
+      "chunk": "j'en veux",
+      "word": "j'en veux",
+      "translation": "I want some",
+      "example": "Du pain ? Oui, j'en veux deux.",
+      "example_translation": "Some bread? Yes, I want two.",
+      "cloze": "Du pain ? Oui, ___ deux.",
+      "tiles": [
+        "Du",
+        "pain",
+        "Oui",
+        "j'en",
+        "veux",
+        "deux"
+      ],
+      "distractor_tiles": [
+        "y",
+        "veut"
+      ],
+      "notes": "«En» replaces du/de la/des + noun. Keep the number after the verb: j'en veux deux.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "j'y veux",
+        "je en veux",
+        "j'en veut"
+      ],
+      "strict": true,
+      "allowSpot": true,
+      "phonetic": "ʒɑ̃ vø"
+    },
+    {
+      "id": "pronouns_y_en_il_y_en_a",
+      "chunk": "il y en a",
+      "word": "il y en a",
+      "translation": "there are some",
+      "example": "Des chaises ? Oui, il y en a trois.",
+      "example_translation": "Chairs? Yes, there are three.",
+      "cloze": "Des chaises ? Oui, ___ trois.",
+      "tiles": [
+        "Des",
+        "chaises",
+        "Oui",
+        "il",
+        "y",
+        "en",
+        "a",
+        "trois"
+      ],
+      "distractor_tiles": [
+        "très"
+      ],
+      "notes": "Order: il + y + en + a.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "il y a en",
+        "il en y a",
+        "il y en ont"
+      ],
+      "strict": true,
+      "allowSpot": true,
+      "phonetic": "il i ɑ̃ a"
+    },
+    {
+      "id": "pronouns_y_en_je_nen_ai_pas",
+      "chunk": "je n'en ai pas",
+      "word": "je n'en ai pas",
+      "translation": "I have none",
+      "example": "Du temps ? Non, je n'en ai pas.",
+      "example_translation": "Time? No, I don't have any.",
+      "cloze": "Du temps ? Non, ___.",
+      "tiles": [
+        "Du",
+        "temps",
+        "Non",
+        "je",
+        "n'en",
+        "ai",
+        "pas"
+      ],
+      "distractor_tiles": [
+        "y",
+        "ne"
+      ],
+      "notes": "Negation wraps around both: ne + en + ai + pas.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "je n'y ai pas",
+        "je n'ai pas en",
+        "je ne en ai pas"
+      ],
+      "strict": true,
+      "allowSpot": true,
+      "phonetic": "ʒə nɑ̃n ɛ pa"
+    },
+    {
+      "id": "pronouns_y_en_jy_pense",
+      "chunk": "j'y pense",
+      "word": "J'y pense",
+      "translation": "I think about it",
+      "example": "Ton examen ? J'y pense tout le temps.",
+      "example_translation": "Your exam? I think about it all the time.",
+      "cloze": "Ton examen ? ___ tout le temps.",
+      "tiles": [
+        "Ton",
+        "examen",
+        "J'y",
+        "pense",
+        "tout",
+        "le",
+        "temps"
+      ],
+      "distractor_tiles": [
+        "en",
+        "pensent"
+      ],
+      "notes": "Penser À → y. (Penser DE would be en.)",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "J'en pense",
+        "Je y pense",
+        "J'y pensent"
+      ],
+      "strict": true,
+      "allowSpot": true,
+      "phonetic": "ʒi pɑ̃s"
+    },
+    {
+      "id": "pronouns_y_en_elle_en_parle",
+      "chunk": "elle en parle",
+      "word": "elle en parle",
+      "translation": "she talks about it",
+      "example": "Ce film ? Oui, elle en parle sans cesse.",
+      "example_translation": "That film? Yes, she talks about it constantly.",
+      "cloze": "Ce film ? Oui, ___ sans cesse.",
+      "tiles": [
+        "Ce",
+        "film",
+        "Oui",
+        "elle",
+        "en",
+        "parle",
+        "sans",
+        "cesse"
+      ],
+      "distractor_tiles": [
+        "y",
+        "parles"
+      ],
+      "notes": "Parler DE → en.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "elle y parle",
+        "elle parle en",
+        "elle en parles"
+      ],
+      "strict": true,
+      "allowSpot": true,
+      "phonetic": "ɛl ɑ̃ paʁl"
+    },
+    {
+      "id": "pronouns_y_en_vas_y",
+      "chunk": "vas-y",
+      "word": "vas-y",
+      "translation": "go ahead",
+      "example": "Tu veux commencer ? Alors vas-y !",
+      "example_translation": "Do you want to start? Then go ahead!",
+      "cloze": "Tu veux commencer ? Alors ___ !",
+      "tiles": [
+        "Tu",
+        "veux",
+        "commencer",
+        "Alors",
+        "vas-y"
+      ],
+      "distractor_tiles": [
+        "va",
+        "en"
+      ],
+      "notes": "Imperative of aller keeps the s before y: vas-y.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "va-y",
+        "vas-en",
+        "vas y"
+      ],
+      "strict": true,
+      "allowSpot": true,
+      "phonetic": "vazi"
+    },
+    {
+      "id": "pronouns_y_en_jen_ai_besoin",
+      "chunk": "j'en ai besoin",
+      "word": "j'en ai besoin",
+      "translation": "I need it / some",
+      "example": "De l'aide ? Oui, j'en ai besoin.",
+      "example_translation": "Some help? Yes, I need some.",
+      "cloze": "De l'aide ? Oui, ___.",
+      "tiles": [
+        "De",
+        "l'aide",
+        "Oui",
+        "j'en",
+        "ai",
+        "besoin"
+      ],
+      "distractor_tiles": [
+        "y"
+      ],
+      "notes": "Avoir besoin DE → en.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "j'y ai besoin",
+        "j'ai besoin en",
+        "je en ai besoin"
+      ],
+      "strict": true,
+      "allowSpot": true,
+      "phonetic": "ʒɑ̃n ɛ bəzwɛ̃"
+    }
+  ]
+}

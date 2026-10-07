@@ -678,3 +678,31 @@ button {
 .challenge-score strong { font-family: var(--font-mono); font-size: 1.6rem; color: var(--gold-300); }
 .challenge-score small { color: var(--steel-200); font-size: 0.72rem; }
 .resting .miner { margin: 0 auto; }
+
+.phonetic { font-family: var(--font-body); font-size: 0.9rem; color: var(--gold-300); letter-spacing: 0.02em; margin: 2px 0 6px; }
+
+/* ── Manche rapide (swipe) ──────────────────────────────────────────────── */
+.quick { display: flex; flex-direction: column; gap: 14px; touch-action: pan-y; }
+.quick-hud { display: flex; align-items: center; gap: 12px; }
+.quick-hud .hud-sparks { font-size: 1.6rem; }
+.quick-hud .combo { color: var(--ember-300); font-family: var(--font-mono); font-weight: 700; }
+.quick-hud .quit { margin-left: auto; color: var(--steel-200); font-size: 0.85rem; padding: 8px 0 8px 12px; }
+.swipe-card {
+  background: var(--steel-800); border: 2px solid var(--steel-600); border-radius: 18px;
+  padding: 36px 20px; text-align: center; min-height: 190px;
+  display: flex; flex-direction: column; justify-content: center; gap: 14px;
+  user-select: none; touch-action: none; cursor: grab; animation: card-in 0.18s ease-out;
+}
+.swipe-card.ok { border-color: var(--success); }
+.swipe-card.ko { border-color: var(--danger); }
+.swipe-gloss { color: var(--steel-200); font-size: 1rem; }
+.swipe-form { font-size: 1.7rem; font-weight: 700; color: var(--gold-300); }
+.swipe-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.swipe-buttons button { padding: 16px; border-radius: 14px; font-size: 1.2rem; font-weight: 700; border: 2px solid; display: flex; gap: 8px; align-items: center; justify-content: center; }
+.swipe-buttons button span { font-size: 0.95rem; }
+.swipe-no { color: #ff8a8d; border-color: rgb(229 72 77 / 0.6); background: rgb(229 72 77 / 0.08); }
+.swipe-yes { color: var(--success); border-color: rgb(123 200 108 / 0.6); background: rgb(123 200 108 / 0.08); }
+.quick-missed-title { font-family: var(--font-display); color: var(--gold-500); font-size: 0.95rem; letter-spacing: 0.08em; margin: 14px 0 6px; text-transform: uppercase; }
+@keyframes card-in { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) { .swipe-card { animation: none; } }
+.quick .heatbar { flex: none; margin: 0; }

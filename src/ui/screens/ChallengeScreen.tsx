@@ -182,7 +182,7 @@ export function ChallengeScreen({
         </div>
         <ExerciseView
           key={`${item.id}-${index}`}
-          exercise={typeFor(index, item.wrong.length > 0)}
+          exercise={typeFor(index, item.allowSpot && item.wrong.length > 0)}
           item={item}
           onAnswer={({ correct }) => answer(correct)}
         />

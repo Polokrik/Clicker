@@ -1,0 +1,274 @@
+{
+  "id": "verb_prepositions",
+  "name": "Verbs & their prepositions",
+  "pattern": "penser à · rêver de · compter sur · jouer à (sport) / jouer de (instrument)",
+  "pattern_note": "Each French verb has its own preposition, often different from English. Learn verb + preposition as one block.",
+  "cefr": "B1",
+  "unlock_cost": 350,
+  "prereq": [
+    "cities_countries"
+  ],
+  "items": [
+    {
+      "id": "verb_prepositions_penser_a",
+      "chunk": "penser à",
+      "word": "penser à",
+      "translation": "to think about",
+      "example": "Je vais penser à mes amis.",
+      "example_translation": "I'm going to think about my friends.",
+      "cloze": "Je vais ___ mes amis.",
+      "tiles": [
+        "Je",
+        "vais",
+        "penser",
+        "à",
+        "mes",
+        "amis"
+      ],
+      "distractor_tiles": [
+        "de",
+        "sur"
+      ],
+      "notes": "«Penser à» = to think of/about someone. «Penser de» only asks for an opinion.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "penser de",
+        "penser sur",
+        "penser pour"
+      ],
+      "strict": true,
+      "allowSpot": true,
+      "phonetic": "pɑ̃se a"
+    },
+    {
+      "id": "verb_prepositions_rever_de",
+      "chunk": "rêver de",
+      "word": "rêver de",
+      "translation": "to dream of",
+      "example": "Elle aime rêver de voyages lointains.",
+      "example_translation": "She likes dreaming of faraway trips.",
+      "cloze": "Elle aime ___ voyages lointains.",
+      "tiles": [
+        "Elle",
+        "aime",
+        "rêver",
+        "de",
+        "voyages",
+        "lointains"
+      ],
+      "distractor_tiles": [
+        "à",
+        "sur"
+      ],
+      "notes": "Rêver de + noun or infinitive.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "rêver sur",
+        "rêver pour",
+        "rêver en"
+      ],
+      "strict": true,
+      "allowSpot": true,
+      "phonetic": "ʁɛve də"
+    },
+    {
+      "id": "verb_prepositions_dependre_de",
+      "chunk": "dépendre de",
+      "word": "dépendre de",
+      "translation": "to depend on",
+      "example": "Le prix va dépendre de la saison.",
+      "example_translation": "The price will depend on the season.",
+      "cloze": "Le prix va ___ la saison.",
+      "tiles": [
+        "Le",
+        "prix",
+        "va",
+        "dépendre",
+        "de",
+        "la",
+        "saison"
+      ],
+      "distractor_tiles": [
+        "à",
+        "sur"
+      ],
+      "notes": "English «depend ON» → French «dépendre DE».",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "dépendre à",
+        "dépendre sur",
+        "dépendre en"
+      ],
+      "strict": true,
+      "allowSpot": true,
+      "phonetic": "depɑ̃dʁ də"
+    },
+    {
+      "id": "verb_prepositions_sinteresser_a",
+      "chunk": "s'intéresse à",
+      "word": "s'intéresse à",
+      "translation": "is interested in",
+      "example": "Il s'intéresse à la musique.",
+      "example_translation": "He is interested in music.",
+      "cloze": "Il ___ la musique.",
+      "tiles": [
+        "Il",
+        "s'intéresse",
+        "à",
+        "la",
+        "musique"
+      ],
+      "distractor_tiles": [
+        "de",
+        "en"
+      ],
+      "notes": "S'intéresser À (not «en» or «de»).",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "s'intéresse de",
+        "s'intéresse en",
+        "s'intéresse pour"
+      ],
+      "strict": true,
+      "allowSpot": true,
+      "phonetic": "sɛ̃teʁɛs a"
+    },
+    {
+      "id": "verb_prepositions_compter_sur",
+      "chunk": "compter sur",
+      "word": "compter sur",
+      "translation": "to count on",
+      "example": "Tu peux compter sur moi.",
+      "example_translation": "You can count on me.",
+      "cloze": "Tu peux ___ moi.",
+      "tiles": [
+        "Tu",
+        "peux",
+        "compter",
+        "sur",
+        "moi"
+      ],
+      "distractor_tiles": [
+        "à",
+        "de"
+      ],
+      "notes": "Compter SUR quelqu'un = to rely on someone.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "compter à",
+        "compter de",
+        "compter pour"
+      ],
+      "strict": true,
+      "allowSpot": true,
+      "phonetic": "kɔ̃te syʁ"
+    },
+    {
+      "id": "verb_prepositions_se_souvenir_de",
+      "chunk": "me souviens de",
+      "word": "me souviens de",
+      "translation": "I remember",
+      "example": "Je me souviens de ce voyage.",
+      "example_translation": "I remember this trip.",
+      "cloze": "Je ___ ce voyage.",
+      "tiles": [
+        "Je",
+        "me",
+        "souviens",
+        "de",
+        "ce",
+        "voyage"
+      ],
+      "distractor_tiles": [
+        "à",
+        "sur"
+      ],
+      "notes": "Se souvenir DE (not «à»).",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "me souviens à",
+        "me souviens sur",
+        "me souviens en"
+      ],
+      "strict": true,
+      "allowSpot": true,
+      "phonetic": "mə suvjɛ̃ də"
+    },
+    {
+      "id": "verb_prepositions_jouer_au",
+      "chunk": "jouent au football",
+      "word": "au",
+      "translation": "play (a sport)",
+      "example": "Les enfants jouent au football.",
+      "example_translation": "The children play football.",
+      "cloze": "Les enfants jouent ___ football.",
+      "tiles": [
+        "Les",
+        "enfants",
+        "jouent",
+        "au",
+        "football"
+      ],
+      "distractor_tiles": [
+        "du",
+        "de"
+      ],
+      "notes": "Sport → jouer À (jouer au foot, à la pétanque).",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "du",
+        "à la",
+        "de"
+      ],
+      "strict": true,
+      "allowSpot": true,
+      "phonetic": "ʒu o futbol"
+    },
+    {
+      "id": "verb_prepositions_jouer_du",
+      "chunk": "joue du piano",
+      "word": "du",
+      "translation": "plays (an instrument)",
+      "example": "Ma sœur joue du piano.",
+      "example_translation": "My sister plays the piano.",
+      "cloze": "Ma sœur joue ___ piano.",
+      "tiles": [
+        "Ma",
+        "sœur",
+        "joue",
+        "du",
+        "piano"
+      ],
+      "distractor_tiles": [
+        "au",
+        "de"
+      ],
+      "notes": "Instrument → jouer DE (jouer du piano, de la guitare).",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "au",
+        "à la",
+        "de la"
+      ],
+      "strict": true,
+      "allowSpot": true,
+      "phonetic": "ʒu dy pjano"
+    }
+  ]
+}

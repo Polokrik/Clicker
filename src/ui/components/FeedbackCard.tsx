@@ -3,6 +3,7 @@ import { Rating } from 'ts-fsrs'
 import type { Item } from '../../content/schema'
 import { STR } from '../../i18n/strings'
 import { Miner } from './Miner'
+import { Phonetic } from './Phonetic'
 import { reportHref } from '../report'
 
 export interface Feedback {
@@ -61,6 +62,7 @@ export function FeedbackCard({
         {STR.forge.answerWas}
       </div>
       <div className="correction">{item.chunk}</div>
+      <Phonetic ipa={item.phonetic} />
       <div style={{ fontStyle: 'italic', fontSize: '0.9rem' }}>{item.example}</div>
       <div style={{ fontSize: '0.8rem', color: 'var(--steel-200)', marginTop: 4 }}>
         {item.example_translation}

@@ -38,7 +38,8 @@
         "vous faisent",
         "vous fait"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "vu fɛt"
     },
     {
       "id": "irregular_present_vous_dites",
@@ -70,7 +71,8 @@
         "vous disent",
         "vous dit"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "vu dit"
     },
     {
       "id": "irregular_present_ils_vont",
@@ -101,7 +103,8 @@
         "ils vais",
         "ils vas"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "il vɔ̃"
     },
     {
       "id": "irregular_present_ils_prennent",
@@ -135,7 +138,8 @@
         "ils prend",
         "ils prenent"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "il pʁɛn"
     },
     {
       "id": "irregular_present_nous_faisons",
@@ -166,7 +170,8 @@
         "nous faites",
         "nous fait"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "nu fəzɔ̃"
     },
     {
       "id": "irregular_present_ils_veulent",
@@ -196,7 +201,8 @@
         "ils veut",
         "ils veuillent"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "il vœl"
     },
     {
       "id": "irregular_present_ils_peuvent",
@@ -225,7 +231,8 @@
         "ils peut",
         "ils puissent"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "il pœv"
     },
     {
       "id": "irregular_present_vous_etes",
@@ -255,7 +262,8 @@
         "vous est",
         "vous sont"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "vuz ɛt"
     }
   ]
 }

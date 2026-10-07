@@ -38,7 +38,8 @@
         "au Lyon",
         "aux Lyon"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "a ljɔ̃"
     },
     {
       "id": "cities_countries_espagne",
@@ -69,7 +70,8 @@
         "au Espagne",
         "aux Espagne"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "ɑ̃n ɛspaɲ"
     },
     {
       "id": "cities_countries_japon",
@@ -98,7 +100,8 @@
         "à Japon",
         "aux Japon"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "o ʒapɔ̃"
     },
     {
       "id": "cities_countries_usa",
@@ -128,7 +131,8 @@
         "au États-Unis",
         "à États-Unis"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "oz etazyni"
     },
     {
       "id": "cities_countries_portugal",
@@ -158,7 +162,8 @@
         "à Portugal",
         "aux Portugal"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "o pɔʁtygal"
     },
     {
       "id": "cities_countries_pays_bas",
@@ -188,7 +193,8 @@
         "en Pays-Bas",
         "à Pays-Bas"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "o pei ba"
     },
     {
       "id": "cities_countries_cuba",
@@ -218,7 +224,8 @@
         "au Cuba",
         "aux Cuba"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "a kyba"
     },
     {
       "id": "cities_countries_allemagne",
@@ -248,7 +255,8 @@
         "au Allemagne",
         "aux Allemagne"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "ɑ̃n almaɲ"
     }
   ]
 }

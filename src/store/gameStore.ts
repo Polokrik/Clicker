@@ -81,6 +81,7 @@ interface GameState {
   importSave: (json: string) => void
   setNewPerDay: (n: number) => void
   finishPlacement: (placement: NonNullable<PlayerState['placement']>) => void
+  addSparks: (n: number) => void
 }
 
 function freshPlayer(): PlayerState {
@@ -101,7 +102,8 @@ function freshPlayer(): PlayerState {
 }
 
 function hasWrong(itemId: string): boolean {
-  return (activePack.items[itemId]?.wrong.length ?? 0) > 0
+  const item = activePack.items[itemId]
+  return !!item && item.allowSpot && item.wrong.length > 0
 }
 
 function todayKey(): string {
@@ -366,6 +368,14 @@ export const useGame = create<GameState>((set, get) => {
     quitLesson: () => {
       set({ lesson: null })
       get().refreshQueue()
+    },
+
+    addSparks: (n) => {
+      const { player } = get()
+      if (n <= 0) return
+      const updated: PlayerState = { ...player, sparks: player.sparks + n }
+      set({ player: updated })
+      void persistSave(updated)
     },
 
     finishPlacement: (placement) => {

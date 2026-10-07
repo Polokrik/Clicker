@@ -18,10 +18,12 @@ export function WorkshopScreen({
   onReplayTutorial,
   onOpenPlacement,
   onStartChallenge,
+  onOpenQuick,
 }: {
   onReplayTutorial: () => void
   onOpenPlacement: () => void
   onStartChallenge: (scope: string) => void
+  onOpenQuick: () => void
 }) {
   const { player, buyUpgrade, importSave, setNewPerDay } = useGame()
   const [confirmReset, setConfirmReset] = useState<'pack' | 'all' | null>(null)
@@ -132,6 +134,13 @@ export function WorkshopScreen({
           </select>
         </section>
       )}
+
+      <section className="shop-section">
+        <h2>{STR.quick.title}</h2>
+        <button className="ghost-btn" onClick={onOpenQuick}>
+          ⚡ {STR.quick.button}
+        </button>
+      </section>
 
       <section className="shop-section">
         <h2>{STR.challenge.section}</h2>

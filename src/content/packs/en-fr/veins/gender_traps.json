@@ -38,7 +38,8 @@
         "la problème",
         "des problème"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "œ̃ pʁɔblɛm"
     },
     {
       "id": "gender_traps_image",
@@ -70,7 +71,8 @@
         "le image",
         "des image"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "yn imaʒ"
     },
     {
       "id": "gender_traps_trip",
@@ -103,7 +105,8 @@
         "la voyage",
         "des voyage"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "œ̃ vwajaʒ"
     },
     {
       "id": "gender_traps_beach",
@@ -136,7 +139,8 @@
         "le plage",
         "des plage"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "yn plaʒ"
     },
     {
       "id": "gender_traps_garage",
@@ -167,7 +171,8 @@
         "la garage",
         "des garage"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "œ̃ gaʁaʒ"
     },
     {
       "id": "gender_traps_fire",
@@ -201,7 +206,8 @@
         "la incendie",
         "des incendie"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "œ̃n ɛ̃sɑ̃di"
     },
     {
       "id": "gender_traps_person",
@@ -231,7 +237,8 @@
         "le personne",
         "des personne"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "yn pɛʁsɔn"
     },
     {
       "id": "gender_traps_page",
@@ -261,7 +268,8 @@
         "le page",
         "des page"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "yn paʒ"
     }
   ]
 }

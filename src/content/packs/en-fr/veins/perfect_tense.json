@@ -38,7 +38,8 @@
         "je ai allé",
         "je suis aller"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "ʒə sɥiz ale"
     },
     {
       "id": "perfect_tense_est_nee",
@@ -69,7 +70,8 @@
         "est né",
         "a née"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "ɛ ne"
     },
     {
       "id": "perfect_tense_sommes_rentres",
@@ -100,7 +102,8 @@
         "nous sommes rentré",
         "nous avons rentrés"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "nu sɔm ʁɑ̃tʁe"
     },
     {
       "id": "perfect_tense_est_partie",
@@ -131,7 +134,8 @@
         "a parti",
         "est partit"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "ɛ paʁti"
     },
     {
       "id": "perfect_tense_ai_monte",
@@ -164,7 +168,8 @@
         "j'ai montée",
         "je ai monté"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "ʒe mɔ̃te"
     },
     {
       "id": "perfect_tense_est_montee",
@@ -195,7 +200,8 @@
         "est monté",
         "a montée"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "ɛ mɔ̃te"
     },
     {
       "id": "perfect_tense_sont_restes",
@@ -227,7 +233,8 @@
         "ils sont resté",
         "ils ont restés"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "il sɔ̃ ʁɛste"
     },
     {
       "id": "perfect_tense_sont_arrivees",
@@ -258,7 +265,8 @@
         "elles sont arrivé",
         "elles sont arrivés"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "ɛl sɔ̃t aʁive"
     }
   ]
 }

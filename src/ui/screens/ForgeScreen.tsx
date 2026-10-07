@@ -14,9 +14,11 @@ import { ScreenTip } from '../components/ScreenTip'
 export function ForgeScreen({
   onOpenVeins,
   onOpenPlacement,
+  onOpenQuick,
 }: {
   onOpenVeins: () => void
   onOpenPlacement: () => void
+  onOpenQuick: () => void
 }) {
   const { queue, exercise, servedAt, combo, player, answerForge, refreshQueue, startLesson } =
     useGame()
@@ -99,6 +101,9 @@ export function ForgeScreen({
               <p>{STR.forge.restingHint}</p>
               <button className="primary-btn" onClick={onOpenVeins}>
                 {STR.forge.openVein}
+              </button>
+              <button className="ghost-btn" style={{ marginTop: 12 }} onClick={onOpenQuick}>
+                ⚡ {STR.quick.button}
               </button>
               <p style={{ marginTop: 14 }}>{STR.forge.close}</p>
             </>

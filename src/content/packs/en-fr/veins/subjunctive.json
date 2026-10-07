@@ -40,7 +40,8 @@
         "partir",
         "partirai"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "il fo kə ʒə paʁt"
     },
     {
       "id": "subjunctive_bien_que_soit",
@@ -72,7 +73,8 @@
         "sera",
         "sont"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "bjɛ̃ kə sə swa"
     },
     {
       "id": "subjunctive_veux_viennes",
@@ -103,7 +105,8 @@
         "venir",
         "viendras"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "ʒə vø kə ty vjɛn"
     },
     {
       "id": "subjunctive_avant_partes",
@@ -133,7 +136,8 @@
         "partiras",
         "partir"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "avɑ̃ kə ty paʁt"
     },
     {
       "id": "subjunctive_pour_puissions",
@@ -165,7 +169,8 @@
         "pourrons",
         "pouvoir"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "puʁ kə nu pɥisjɔ̃"
     },
     {
       "id": "subjunctive_faut_fassions",
@@ -196,7 +201,8 @@
         "ferons",
         "faire"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "il fo kə nu fasjɔ̃"
     },
     {
       "id": "subjunctive_pense_vienne",
@@ -227,7 +233,8 @@
         "viendra",
         "venir"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "ʒə nə pɑ̃s pa kil vjɛn"
     },
     {
       "id": "subjunctive_faut_aies",
@@ -259,7 +266,8 @@
         "auras",
         "avoir"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "il fo kə ty ɛ"
     }
   ]
 }

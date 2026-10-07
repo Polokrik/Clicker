@@ -24,6 +24,19 @@
         "perfect_tense",
         "subjunctive"
       ]
+    },
+    {
+      "id": "further",
+      "name": "Go further",
+      "description": "The rules that separate A2 from a solid B1.",
+      "veins": [
+        "adjectives",
+        "false_friends",
+        "time_expressions",
+        "verb_prepositions",
+        "pronouns_y_en",
+        "reflexive"
+      ]
     }
   ]
 }

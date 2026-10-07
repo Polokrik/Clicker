@@ -1,0 +1,280 @@
+{
+  "id": "false_friends",
+  "name": "Faux amis",
+  "pattern": "Looks English, means something else",
+  "pattern_note": "Many French words look like English ones but mean something different. Learn the real meaning, not the look-alike.",
+  "cefr": "B1",
+  "unlock_cost": 250,
+  "prereq": [
+    "irregular_present"
+  ],
+  "items": [
+    {
+      "id": "false_friends_actuellement",
+      "chunk": "actuellement",
+      "word": "actuellement",
+      "translation": "currently (not “actually”)",
+      "example": "Je travaille actuellement à Lyon.",
+      "example_translation": "I'm currently working in Lyon.",
+      "cloze": "Je travaille ___ à Lyon.",
+      "tiles": [
+        "Je",
+        "travaille",
+        "actuellement",
+        "à",
+        "Lyon"
+      ],
+      "distractor_tiles": [
+        "vraiment",
+        "bientôt"
+      ],
+      "notes": "«Actuellement» = at the moment. «Actually» = en fait.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "en fait",
+        "vraiment",
+        "finalement"
+      ],
+      "strict": true,
+      "allowSpot": false,
+      "phonetic": "aktɥɛlmɑ̃"
+    },
+    {
+      "id": "false_friends_assister",
+      "chunk": "assister à",
+      "word": "assister",
+      "translation": "to attend (not “to assist”)",
+      "example": "Nous allons assister à la réunion demain.",
+      "example_translation": "We are going to attend the meeting tomorrow.",
+      "cloze": "Nous allons ___ à la réunion demain.",
+      "tiles": [
+        "Nous",
+        "allons",
+        "assister",
+        "à",
+        "la",
+        "réunion",
+        "demain"
+      ],
+      "distractor_tiles": [
+        "aider",
+        "attendre"
+      ],
+      "notes": "«Assister à» = to be present at. To help someone = aider.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "aider",
+        "attendre",
+        "assurer"
+      ],
+      "strict": true,
+      "allowSpot": false,
+      "phonetic": "asiste a"
+    },
+    {
+      "id": "false_friends_librairie",
+      "chunk": "une librairie",
+      "word": "une librairie",
+      "translation": "a bookshop (not “a library”)",
+      "example": "J'ai acheté ce roman dans une librairie.",
+      "example_translation": "I bought this novel in a bookshop.",
+      "cloze": "J'ai acheté ce roman dans ___.",
+      "tiles": [
+        "J'ai",
+        "acheté",
+        "ce",
+        "roman",
+        "dans",
+        "une",
+        "librairie"
+      ],
+      "distractor_tiles": [
+        "livre",
+        "bibliothèque"
+      ],
+      "notes": "A library = une bibliothèque.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "une bibliothèque",
+        "un livre",
+        "une bibliotheque"
+      ],
+      "strict": true,
+      "allowSpot": false,
+      "phonetic": "yn libʁɛʁi"
+    },
+    {
+      "id": "false_friends_rester",
+      "chunk": "rester",
+      "word": "rester",
+      "translation": "to stay (not “to rest”)",
+      "example": "Je vais rester à la maison ce week-end.",
+      "example_translation": "I'm going to stay at home this weekend.",
+      "cloze": "Je vais ___ à la maison ce week-end.",
+      "tiles": [
+        "Je",
+        "vais",
+        "rester",
+        "à",
+        "la",
+        "maison",
+        "ce",
+        "week-end"
+      ],
+      "distractor_tiles": [
+        "reste",
+        "repos"
+      ],
+      "notes": "To rest = se reposer. «Rester» = to stay or remain.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "se reposer",
+        "reposer",
+        "arrêter"
+      ],
+      "strict": true,
+      "allowSpot": false,
+      "phonetic": "ʁɛste"
+    },
+    {
+      "id": "false_friends_demander",
+      "chunk": "demander",
+      "word": "demander",
+      "translation": "to ask (not “to demand”)",
+      "example": "Je vais demander mon chemin.",
+      "example_translation": "I'm going to ask the way.",
+      "cloze": "Je vais ___ mon chemin.",
+      "tiles": [
+        "Je",
+        "vais",
+        "demander",
+        "mon",
+        "chemin"
+      ],
+      "distractor_tiles": [
+        "exiger",
+        "demande"
+      ],
+      "notes": "«Demander» is a polite request: to ask. To demand = exiger.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "exiger",
+        "demande",
+        "réclamer"
+      ],
+      "strict": true,
+      "allowSpot": false,
+      "phonetic": "dəmɑ̃de"
+    },
+    {
+      "id": "false_friends_sensible",
+      "chunk": "sensible",
+      "word": "sensible",
+      "translation": "sensitive (not “sensible”)",
+      "example": "Elle est très sensible aux critiques.",
+      "example_translation": "She is very sensitive to criticism.",
+      "cloze": "Elle est très ___ aux critiques.",
+      "tiles": [
+        "Elle",
+        "est",
+        "très",
+        "sensible",
+        "aux",
+        "critiques"
+      ],
+      "distractor_tiles": [
+        "sensé",
+        "sage"
+      ],
+      "notes": "Sensible (English) = raisonnable or sensé.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "raisonnable",
+        "sensé",
+        "sage"
+      ],
+      "strict": true,
+      "allowSpot": false,
+      "phonetic": "sɑ̃sibl"
+    },
+    {
+      "id": "false_friends_eventuellement",
+      "chunk": "éventuellement",
+      "word": "éventuellement",
+      "translation": "possibly (not “eventually”)",
+      "example": "Je viendrai éventuellement avec un ami.",
+      "example_translation": "I might come with a friend.",
+      "cloze": "Je viendrai ___ avec un ami.",
+      "tiles": [
+        "Je",
+        "viendrai",
+        "éventuellement",
+        "avec",
+        "un",
+        "ami"
+      ],
+      "distractor_tiles": [
+        "finalement",
+        "enfin"
+      ],
+      "notes": "Eventually = finalement, à la fin.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "finalement",
+        "enfin",
+        "éventuel"
+      ],
+      "strict": true,
+      "allowSpot": false,
+      "phonetic": "evɑ̃tɥɛlmɑ̃"
+    },
+    {
+      "id": "false_friends_passer_examen",
+      "chunk": "passer un examen",
+      "word": "passer un examen",
+      "translation": "to take an exam (not “to pass”)",
+      "example": "Il va passer un examen en juin.",
+      "example_translation": "He is going to take an exam in June.",
+      "cloze": "Il va ___ en juin.",
+      "tiles": [
+        "Il",
+        "va",
+        "passer",
+        "un",
+        "examen",
+        "en",
+        "juin"
+      ],
+      "distractor_tiles": [
+        "réussir",
+        "donner"
+      ],
+      "notes": "Passer = sit the exam; réussir = pass it.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "réussir un examen",
+        "donner un examen",
+        "prendre un examen"
+      ],
+      "strict": true,
+      "allowSpot": false,
+      "phonetic": "pase œ̃n ɛgzamɛ̃"
+    }
+  ]
+}

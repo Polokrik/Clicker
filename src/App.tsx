@@ -13,6 +13,7 @@ import { VeinsScreen } from './ui/screens/VeinsScreen'
 import { WorkshopScreen } from './ui/screens/WorkshopScreen'
 import { LessonScreen } from './ui/screens/LessonScreen'
 import { PlacementScreen } from './ui/screens/PlacementScreen'
+import { QuickRoundScreen } from './ui/screens/QuickRoundScreen'
 import { ChallengeScreen, type ChallengeStart } from './ui/screens/ChallengeScreen'
 import { challengeFromHash } from './engine/challenge'
 import { WelcomeBackModal } from './ui/WelcomeBackModal'
@@ -35,6 +36,7 @@ export default function App() {
   )
   const [challengeDismissed, setChallengeDismissed] = useState(false)
   const [placementOpen, setPlacementOpen] = useState(false)
+  const [quickOpen, setQuickOpen] = useState(false)
   const [tutorialOpen, setTutorialOpen] = useState(() => !tutorialSeen() && !incoming)
 
   useEffect(() => {
@@ -100,6 +102,8 @@ export default function App() {
         <LessonScreen />
       ) : challenge ? (
         <ChallengeScreen start={challenge} onClose={closeChallenge} />
+      ) : quickOpen ? (
+        <QuickRoundScreen onClose={() => setQuickOpen(false)} />
       ) : placementOpen ? (
         <PlacementScreen onClose={() => setPlacementOpen(false)} />
       ) : (
@@ -108,6 +112,7 @@ export default function App() {
             <ForgeScreen
               onOpenVeins={() => setTab('veins')}
               onOpenPlacement={() => setPlacementOpen(true)}
+              onOpenQuick={() => setQuickOpen(true)}
             />
           )}
           {tab === 'rack' && <RackScreen />}
@@ -116,11 +121,12 @@ export default function App() {
               onReplayTutorial={() => setTutorialOpen(true)}
               onOpenPlacement={() => setPlacementOpen(true)}
               onStartChallenge={(scope) => setChallenge({ mode: 'create', scope })}
+              onOpenQuick={() => setQuickOpen(true)}
             />}
         </>
       )}
 
-      {!lesson && !placementOpen && !challenge && (
+      {!lesson && !placementOpen && !challenge && !quickOpen && (
         <nav className="tabbar">
           {TABS.map(({ id }) => (
             <button

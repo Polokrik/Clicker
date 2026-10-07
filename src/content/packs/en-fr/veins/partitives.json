@@ -39,7 +39,8 @@
         "de la pain",
         "des pain"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "dy pɛ̃"
     },
     {
       "id": "partitives_de_la_confiture",
@@ -69,7 +70,8 @@
         "de confiture",
         "de le confiture"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "də la kɔ̃fityʁ"
     },
     {
       "id": "partitives_de_leau",
@@ -101,7 +103,8 @@
         "de la eau",
         "des eau"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "də lo"
     },
     {
       "id": "partitives_pas_de_pain",
@@ -133,7 +136,8 @@
         "pas des pain",
         "pas le pain"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "pa də pɛ̃"
     },
     {
       "id": "partitives_beaucoup_de_monde",
@@ -165,7 +169,8 @@
         "beaucoup des monde",
         "beaucoup de le monde"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "boku də mɔ̃d"
     },
     {
       "id": "partitives_un_peu_deau",
@@ -195,7 +200,8 @@
         "un peu du eau",
         "un peu l'eau"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "œ̃ pø do"
     },
     {
       "id": "partitives_trop_de_bruit",
@@ -227,7 +233,8 @@
         "trop de le bruit",
         "trop des bruit"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "tʁo də bʁɥi"
     },
     {
       "id": "partitives_pas_dargent",
@@ -258,7 +265,8 @@
         "pas du argent",
         "pas l'argent"
       ],
-      "strict": true
+      "strict": true,
+      "phonetic": "pa daʁʒɑ̃"
     }
   ]
 }

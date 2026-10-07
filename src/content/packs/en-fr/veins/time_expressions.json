@@ -1,0 +1,281 @@
+{
+  "id": "time_expressions",
+  "name": "Time: depuis, il y a, pendant, dans",
+  "pattern": "depuis + present (still true) · il y a = ago · dans = in (future)",
+  "pattern_note": "English uses «for» for all of these. French picks one by meaning: still going (depuis), finished (pendant), ago (il y a), future (dans).",
+  "cefr": "B1",
+  "unlock_cost": 300,
+  "prereq": [
+    "irregular_present"
+  ],
+  "items": [
+    {
+      "id": "time_expressions_depuis_ans",
+      "chunk": "depuis deux ans",
+      "word": "depuis",
+      "translation": "for two years (and still)",
+      "example": "J'habite ici depuis deux ans.",
+      "example_translation": "I have lived here for two years.",
+      "cloze": "J'habite ici ___ deux ans.",
+      "tiles": [
+        "J'habite",
+        "ici",
+        "depuis",
+        "deux",
+        "ans"
+      ],
+      "distractor_tiles": [
+        "pendant",
+        "dans"
+      ],
+      "notes": "Still true now → depuis + PRESENT («j'habite», not «j'ai habité»).",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "pendant",
+        "il y a",
+        "dans"
+      ],
+      "strict": true,
+      "allowSpot": false,
+      "phonetic": "dəpɥi dø zɑ̃"
+    },
+    {
+      "id": "time_expressions_il_y_a_ans",
+      "chunk": "il y a deux ans",
+      "word": "il y a",
+      "translation": "two years ago",
+      "example": "Je suis arrivé ici il y a deux ans.",
+      "example_translation": "I arrived here two years ago.",
+      "cloze": "Je suis arrivé ici ___ deux ans.",
+      "tiles": [
+        "Je",
+        "suis",
+        "arrivé",
+        "ici",
+        "il",
+        "y",
+        "a",
+        "deux",
+        "ans"
+      ],
+      "distractor_tiles": [
+        "depuis",
+        "dans"
+      ],
+      "notes": "Il y a + duration = ago, with a past tense.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "depuis",
+        "pendant",
+        "dans"
+      ],
+      "strict": true,
+      "allowSpot": false,
+      "phonetic": "il ja dø zɑ̃"
+    },
+    {
+      "id": "time_expressions_pendant_heure",
+      "chunk": "pendant une heure",
+      "word": "pendant",
+      "translation": "for an hour (finished)",
+      "example": "Nous avons marché pendant une heure.",
+      "example_translation": "We walked for an hour.",
+      "cloze": "Nous avons marché ___ une heure.",
+      "tiles": [
+        "Nous",
+        "avons",
+        "marché",
+        "pendant",
+        "une",
+        "heure"
+      ],
+      "distractor_tiles": [
+        "depuis",
+        "pour"
+      ],
+      "notes": "A finished duration in the past → pendant + passé composé.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "depuis",
+        "pour",
+        "il y a"
+      ],
+      "strict": true,
+      "allowSpot": false,
+      "phonetic": "pɑ̃dɑ̃ yn œʁ"
+    },
+    {
+      "id": "time_expressions_dans_jours",
+      "chunk": "dans deux jours",
+      "word": "dans",
+      "translation": "in two days (from now)",
+      "example": "Le colis arrive dans deux jours.",
+      "example_translation": "The parcel arrives in two days.",
+      "cloze": "Le colis arrive ___ deux jours.",
+      "tiles": [
+        "Le",
+        "colis",
+        "arrive",
+        "dans",
+        "deux",
+        "jours"
+      ],
+      "distractor_tiles": [
+        "en",
+        "depuis"
+      ],
+      "notes": "Future point in time → dans. Time to complete something → en.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "en",
+        "depuis",
+        "pendant"
+      ],
+      "strict": true,
+      "allowSpot": false,
+      "phonetic": "dɑ̃ dø ʒuʁ"
+    },
+    {
+      "id": "time_expressions_en_jours",
+      "chunk": "en deux jours",
+      "word": "en",
+      "translation": "within two days (to complete)",
+      "example": "Il a fini le travail en deux jours.",
+      "example_translation": "He finished the job in two days.",
+      "cloze": "Il a fini le travail ___ deux jours.",
+      "tiles": [
+        "Il",
+        "a",
+        "fini",
+        "le",
+        "travail",
+        "en",
+        "deux",
+        "jours"
+      ],
+      "distractor_tiles": [
+        "dans",
+        "pendant"
+      ],
+      "notes": "How long it took to do something → en.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "dans",
+        "pendant",
+        "depuis"
+      ],
+      "strict": true,
+      "allowSpot": false,
+      "phonetic": "ɑ̃ dø ʒuʁ"
+    },
+    {
+      "id": "time_expressions_depuis_hier",
+      "chunk": "depuis hier",
+      "word": "depuis",
+      "translation": "since yesterday",
+      "example": "Il pleut depuis hier.",
+      "example_translation": "It has been raining since yesterday.",
+      "cloze": "Il pleut ___ hier.",
+      "tiles": [
+        "Il",
+        "pleut",
+        "depuis",
+        "hier"
+      ],
+      "distractor_tiles": [
+        "pendant",
+        "dès"
+      ],
+      "notes": "Depuis also gives a starting point: depuis hier, depuis lundi.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "il y a",
+        "pendant",
+        "dès"
+      ],
+      "strict": true,
+      "allowSpot": false,
+      "phonetic": "dəpɥi jɛʁ"
+    },
+    {
+      "id": "time_expressions_ca_fait",
+      "chunk": "ça fait deux ans que",
+      "word": "ça fait",
+      "translation": "it has been two years since",
+      "example": "Aujourd'hui, ça fait deux ans que j'apprends le français.",
+      "example_translation": "Today, it has been two years since I started learning French.",
+      "cloze": "Aujourd'hui, ___ deux ans que j'apprends le français.",
+      "tiles": [
+        "Aujourd'hui",
+        "ça",
+        "fait",
+        "deux",
+        "ans",
+        "que",
+        "j'apprends",
+        "le",
+        "français"
+      ],
+      "distractor_tiles": [
+        "il y a",
+        "depuis"
+      ],
+      "notes": "«Ça fait … que» = same idea as depuis, with the verb in the present.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "il y a",
+        "depuis",
+        "pendant"
+      ],
+      "strict": true,
+      "allowSpot": false,
+      "phonetic": "sa fɛ dø zɑ̃ kə"
+    },
+    {
+      "id": "time_expressions_jusqua",
+      "chunk": "jusqu'à vendredi",
+      "word": "jusqu'à",
+      "translation": "until Friday",
+      "example": "Je reste ici jusqu'à vendredi.",
+      "example_translation": "I'm staying here until Friday.",
+      "cloze": "Je reste ici ___ vendredi.",
+      "tiles": [
+        "Je",
+        "reste",
+        "ici",
+        "jusqu'à",
+        "vendredi"
+      ],
+      "distractor_tiles": [
+        "avant",
+        "depuis"
+      ],
+      "notes": "Jusqu'à + time/place = until, as far as.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "depuis",
+        "pendant",
+        "avant"
+      ],
+      "strict": true,
+      "allowSpot": false,
+      "phonetic": "ʒyska vɑ̃dʁədi"
+    }
+  ]
+}

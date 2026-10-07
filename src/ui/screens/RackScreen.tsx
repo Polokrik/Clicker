@@ -7,6 +7,7 @@ import { speak, ttsAvailable } from '../../audio/tts'
 import { STR, UI_LANG } from '../../i18n/strings'
 import { Ingot } from '../components/Ingot'
 import { ScreenTip } from '../components/ScreenTip'
+import { Phonetic } from '../components/Phonetic'
 import { reportHref } from '../report'
 
 /** Le Râtelier : la mémoire, règle par règle, avec l'urgence de chaque lingot. */
@@ -139,6 +140,7 @@ export function RackScreen() {
                 </button>
               )}
             </div>
+            <Phonetic ipa={sel.item.phonetic} />
             <div className="translation">{sel.item.translation}</div>
             <div className="example">{sel.item.example}</div>
             <div className="example-fr">{sel.item.example_translation}</div>

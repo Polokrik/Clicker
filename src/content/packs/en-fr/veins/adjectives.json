@@ -1,0 +1,278 @@
+{
+  "id": "adjectives",
+  "name": "Adjectives: place & agreement",
+  "pattern": "Before the noun: BAGS · nouvel/bel/vieil before a vowel",
+  "pattern_note": "Beauty, Age, Goodness, Size adjectives usually go BEFORE the noun. Before a masculine noun starting with a vowel: nouvel, bel, vieil.",
+  "cefr": "A2",
+  "unlock_cost": 250,
+  "prereq": [
+    "gender_traps"
+  ],
+  "items": [
+    {
+      "id": "adjectives_grand_homme",
+      "chunk": "un grand homme",
+      "word": "un grand homme",
+      "translation": "a great man (famous)",
+      "example": "Victor Hugo était un grand homme.",
+      "example_translation": "Victor Hugo was a great man.",
+      "cloze": "Victor Hugo était ___.",
+      "tiles": [
+        "Victor",
+        "Hugo",
+        "était",
+        "un",
+        "grand",
+        "homme"
+      ],
+      "distractor_tiles": [
+        "grande"
+      ],
+      "notes": "Before the noun, «grand» means great; after it («un homme grand») it means tall.",
+      "tags": [
+        "A2"
+      ],
+      "wrong": [
+        "un homme grand",
+        "une grand homme",
+        "un grande homme"
+      ],
+      "strict": true,
+      "allowSpot": false,
+      "phonetic": "œ̃ gʁɑ̃t ɔm"
+    },
+    {
+      "id": "adjectives_homme_grand",
+      "chunk": "un homme grand",
+      "word": "un homme grand",
+      "translation": "a tall man",
+      "example": "Mon père est un homme grand et mince.",
+      "example_translation": "My father is a tall, slim man.",
+      "cloze": "Mon père est ___ et mince.",
+      "tiles": [
+        "Mon",
+        "père",
+        "est",
+        "un",
+        "homme",
+        "grand",
+        "et",
+        "mince"
+      ],
+      "distractor_tiles": [
+        "très"
+      ],
+      "notes": "After the noun, «grand» describes physical size: tall.",
+      "tags": [
+        "A2"
+      ],
+      "wrong": [
+        "un grand homme",
+        "un homme grande",
+        "une homme grand"
+      ],
+      "strict": true,
+      "allowSpot": false,
+      "phonetic": "œ̃n ɔm gʁɑ̃"
+    },
+    {
+      "id": "adjectives_belle_maison",
+      "chunk": "une belle maison",
+      "word": "une belle maison",
+      "translation": "a beautiful house",
+      "example": "Ils ont acheté une belle maison.",
+      "example_translation": "They bought a beautiful house.",
+      "cloze": "Ils ont acheté ___.",
+      "tiles": [
+        "Ils",
+        "ont",
+        "acheté",
+        "une",
+        "belle",
+        "maison"
+      ],
+      "distractor_tiles": [
+        "beau",
+        "bel"
+      ],
+      "notes": "Beau → belle (feminine). Place it before the noun.",
+      "tags": [
+        "A2"
+      ],
+      "wrong": [
+        "une bel maison",
+        "un belle maison",
+        "une beau maison"
+      ],
+      "strict": true,
+      "allowSpot": true,
+      "phonetic": "yn bɛl mɛzɔ̃"
+    },
+    {
+      "id": "adjectives_nouvel_ami",
+      "chunk": "un nouvel ami",
+      "word": "un nouvel ami",
+      "translation": "a new friend",
+      "example": "J'ai rencontré un nouvel ami hier.",
+      "example_translation": "I met a new friend yesterday.",
+      "cloze": "J'ai rencontré ___ hier.",
+      "tiles": [
+        "J'ai",
+        "rencontré",
+        "un",
+        "nouvel",
+        "ami",
+        "hier"
+      ],
+      "distractor_tiles": [
+        "nouveau",
+        "nouvelle"
+      ],
+      "notes": "Before a masculine vowel sound, nouveau becomes nouvel (liaison).",
+      "tags": [
+        "A2"
+      ],
+      "wrong": [
+        "un nouveau ami",
+        "une nouvel ami",
+        "un nouvelle ami"
+      ],
+      "strict": true,
+      "allowSpot": true,
+      "phonetic": "œ̃ nuvɛl ami"
+    },
+    {
+      "id": "adjectives_vieille_amie",
+      "chunk": "une vieille amie",
+      "word": "une vieille amie",
+      "translation": "an old friend (f.)",
+      "example": "Je dîne avec une vieille amie ce soir.",
+      "example_translation": "I'm having dinner with an old friend tonight.",
+      "cloze": "Je dîne avec ___ ce soir.",
+      "tiles": [
+        "Je",
+        "dîne",
+        "avec",
+        "une",
+        "vieille",
+        "amie",
+        "ce",
+        "soir"
+      ],
+      "distractor_tiles": [
+        "vieil",
+        "vieux"
+      ],
+      "notes": "Vieux → vieille (f.), vieil (m. before a vowel).",
+      "tags": [
+        "A2"
+      ],
+      "wrong": [
+        "une vieil amie",
+        "un vieille amie",
+        "une vieux amie"
+      ],
+      "strict": true,
+      "allowSpot": true,
+      "phonetic": "yn vjɛj ami"
+    },
+    {
+      "id": "adjectives_bel_appartement",
+      "chunk": "un bel appartement",
+      "word": "un bel appartement",
+      "translation": "a beautiful flat",
+      "example": "Ils habitent dans un bel appartement.",
+      "example_translation": "They live in a beautiful flat.",
+      "cloze": "Ils habitent dans ___.",
+      "tiles": [
+        "Ils",
+        "habitent",
+        "dans",
+        "un",
+        "bel",
+        "appartement"
+      ],
+      "distractor_tiles": [
+        "beau",
+        "belle"
+      ],
+      "notes": "Beau → bel before a masculine noun starting with a vowel.",
+      "tags": [
+        "A2"
+      ],
+      "wrong": [
+        "un beau appartement",
+        "une bel appartement",
+        "un belle appartement"
+      ],
+      "strict": true,
+      "allowSpot": true,
+      "phonetic": "œ̃ bɛl apaʁtəmɑ̃"
+    },
+    {
+      "id": "adjectives_yeux_bleus",
+      "chunk": "les yeux bleus",
+      "word": "bleus",
+      "translation": "blue eyes",
+      "example": "Elle a les yeux bleus.",
+      "example_translation": "She has blue eyes.",
+      "cloze": "Elle a les yeux ___.",
+      "tiles": [
+        "Elle",
+        "a",
+        "les",
+        "yeux",
+        "bleus"
+      ],
+      "distractor_tiles": [
+        "bleu",
+        "bleue"
+      ],
+      "notes": "The adjective agrees with «yeux» (masculine plural): bleus.",
+      "tags": [
+        "A2"
+      ],
+      "wrong": [
+        "bleu",
+        "bleue",
+        "bleues"
+      ],
+      "strict": true,
+      "allowSpot": true,
+      "phonetic": "lez jø blø"
+    },
+    {
+      "id": "adjectives_toute_journee",
+      "chunk": "toute la journée",
+      "word": "toute la journée",
+      "translation": "all day long",
+      "example": "Il a plu toute la journée.",
+      "example_translation": "It rained all day long.",
+      "cloze": "Il a plu ___.",
+      "tiles": [
+        "Il",
+        "a",
+        "plu",
+        "toute",
+        "la",
+        "journée"
+      ],
+      "distractor_tiles": [
+        "tout",
+        "tous"
+      ],
+      "notes": "«Tout» agrees with the noun: toute la journée, tout le temps, tous les jours.",
+      "tags": [
+        "A2"
+      ],
+      "wrong": [
+        "tout la journée",
+        "tous la journée",
+        "toutes la journée"
+      ],
+      "strict": true,
+      "allowSpot": true,
+      "phonetic": "tut la ʒuʁne"
+    }
+  ]
+}

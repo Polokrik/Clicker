@@ -2,6 +2,7 @@ import { useCallback, useState } from 'react'
 import { useGame, VEIN_COMPLETE_BONUS } from '../../store/gameStore'
 import { activePack } from '../../content'
 import { Miner } from '../components/Miner'
+import { Phonetic } from '../components/Phonetic'
 import { speak, ttsAvailable } from '../../audio/tts'
 import { STR } from '../../i18n/strings'
 import { ExerciseView } from '../exercises/ExerciseView'
@@ -83,6 +84,7 @@ export function LessonScreen() {
 
         <div className="prospect-card">
           <div className="chunk">{item.chunk}</div>
+          <Phonetic ipa={item.phonetic} />
           <div className="translation">{item.translation}</div>
           {ttsAvailable() && (
             <button className="listen-btn" onClick={() => speak(item.example)}>

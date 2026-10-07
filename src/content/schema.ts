@@ -30,6 +30,10 @@ export const ItemSchema = z.object({
   wrong: z.array(z.string().min(1)).default([]),
   /** Saisie exacte exigée (pas de tolérance typo) — pour la grammaire (vais/vas). */
   strict: z.boolean().default(false),
+  /** Faux pour les items dont les « mauvaises réponses » sont du français valide (faux amis, depuis/pendant…) : pas de « repère l'erreur ». */
+  allowSpot: z.boolean().default(true),
+  /** Prononciation (API) du chunk, affichée sur les cartes. */
+  phonetic: z.string().optional(),
 })
 
 export const VeinSchema = z.object({

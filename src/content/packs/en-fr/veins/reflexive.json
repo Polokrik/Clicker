@@ -1,0 +1,284 @@
+{
+  "id": "reflexive",
+  "name": "Reflexive verbs",
+  "pattern": "se + verb · être in the passé composé · agreement only with a direct object before",
+  "pattern_note": "Reflexive verbs use être in the past. The participle agrees with the subject only when the reflexive pronoun is the direct object.",
+  "cefr": "B1",
+  "unlock_cost": 500,
+  "prereq": [
+    "perfect_tense"
+  ],
+  "items": [
+    {
+      "id": "reflexive_me_leve",
+      "chunk": "je me lève",
+      "word": "je me lève",
+      "translation": "I get up",
+      "example": "Le matin, je me lève à sept heures.",
+      "example_translation": "In the morning, I get up at seven.",
+      "cloze": "Le matin, ___ à sept heures.",
+      "tiles": [
+        "Le",
+        "matin",
+        "je",
+        "me",
+        "lève",
+        "à",
+        "sept",
+        "heures"
+      ],
+      "distractor_tiles": [
+        "levé"
+      ],
+      "notes": "Reflexive pronoun me/te/se + accent on «lève».",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "je me lèves",
+        "je me levez",
+        "je me leve"
+      ],
+      "strict": true,
+      "allowSpot": true,
+      "phonetic": "ʒə mə lɛv"
+    },
+    {
+      "id": "reflexive_se_couche",
+      "chunk": "elle se couche",
+      "word": "elle se couche",
+      "translation": "she goes to bed",
+      "example": "En semaine, elle se couche à minuit.",
+      "example_translation": "On weekdays, she goes to bed at midnight.",
+      "cloze": "En semaine, ___ à minuit.",
+      "tiles": [
+        "En",
+        "semaine",
+        "elle",
+        "se",
+        "couche",
+        "à",
+        "minuit"
+      ],
+      "distractor_tiles": [
+        "ce",
+        "couches"
+      ],
+      "notes": "«Se» (reflexive) vs «ce» (this): se couche.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "elle se couches",
+        "elle ce couche",
+        "elle se couchent"
+      ],
+      "strict": true,
+      "allowSpot": true,
+      "phonetic": "ɛl sə kuʃ"
+    },
+    {
+      "id": "reflexive_sommes_reveilles",
+      "chunk": "nous nous sommes réveillés",
+      "word": "nous nous sommes réveillés",
+      "translation": "we woke up",
+      "example": "Ce matin, nous nous sommes réveillés tôt.",
+      "example_translation": "This morning, we woke up early.",
+      "cloze": "Ce matin, ___ tôt.",
+      "tiles": [
+        "Ce",
+        "matin",
+        "nous",
+        "nous",
+        "sommes",
+        "réveillés",
+        "tôt"
+      ],
+      "distractor_tiles": [
+        "avons",
+        "réveillé"
+      ],
+      "notes": "Reflexive → être. Add -s for «nous» (masculine plural).",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "nous nous avons réveillé",
+        "nous sommes réveillé",
+        "nous nous sommes réveillé"
+      ],
+      "strict": true,
+      "allowSpot": true,
+      "phonetic": "nu nu sɔm ʁevɛje"
+    },
+    {
+      "id": "reflexive_sest_lavee",
+      "chunk": "elle s'est lavée",
+      "word": "elle s'est lavée",
+      "translation": "she washed (herself)",
+      "example": "Hier, elle s'est lavée avant le dîner.",
+      "example_translation": "Yesterday, she washed before dinner.",
+      "cloze": "Hier, ___ avant le dîner.",
+      "tiles": [
+        "Hier",
+        "elle",
+        "s'est",
+        "lavée",
+        "avant",
+        "le",
+        "dîner"
+      ],
+      "distractor_tiles": [
+        "a",
+        "lavé"
+      ],
+      "notes": "Pronoun = direct object → the participle agrees: lavée.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "elle s'est lavé",
+        "elle a lavée",
+        "elle s'a lavée"
+      ],
+      "strict": true,
+      "allowSpot": true,
+      "phonetic": "ɛl sɛ lave"
+    },
+    {
+      "id": "reflexive_lave_mains",
+      "chunk": "s'est lavé les mains",
+      "word": "s'est lavé",
+      "translation": "washed her hands",
+      "example": "Avant de manger, elle s'est lavé les mains.",
+      "example_translation": "Before eating, she washed her hands.",
+      "cloze": "Avant de manger, elle ___ les mains.",
+      "tiles": [
+        "Avant",
+        "de",
+        "manger",
+        "elle",
+        "s'est",
+        "lavé",
+        "les",
+        "mains"
+      ],
+      "distractor_tiles": [
+        "lavée",
+        "a"
+      ],
+      "notes": "A direct object follows (les mains) → no agreement: s'est lavé.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "s'est lavée",
+        "s'a lavé",
+        "a lavé"
+      ],
+      "strict": true,
+      "allowSpot": true,
+      "phonetic": "sɛ lave le mɛ̃"
+    },
+    {
+      "id": "reflexive_se_depecher",
+      "chunk": "se dépêcher",
+      "word": "se dépêcher",
+      "translation": "to hurry",
+      "example": "Il faut se dépêcher, le train part.",
+      "example_translation": "We have to hurry, the train is leaving.",
+      "cloze": "Il faut ___, le train part.",
+      "tiles": [
+        "Il",
+        "faut",
+        "se",
+        "dépêcher",
+        "le",
+        "train",
+        "part"
+      ],
+      "distractor_tiles": [
+        "dépêche",
+        "dépêché"
+      ],
+      "notes": "Se dépêcher (reflexive), infinitive after «il faut».",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "se dépêché",
+        "se dépêchez",
+        "ce dépêcher"
+      ],
+      "strict": true,
+      "allowSpot": true,
+      "phonetic": "sə depɛʃe"
+    },
+    {
+      "id": "reflexive_se_telephone",
+      "chunk": "se sont téléphoné",
+      "word": "se sont téléphoné",
+      "translation": "called each other",
+      "example": "Hier soir, ils se sont téléphoné.",
+      "example_translation": "Last night, they called each other.",
+      "cloze": "Hier soir, ils ___.",
+      "tiles": [
+        "Hier",
+        "soir",
+        "ils",
+        "se",
+        "sont",
+        "téléphoné"
+      ],
+      "distractor_tiles": [
+        "ont",
+        "téléphonés"
+      ],
+      "notes": "Téléphoner À quelqu'un → indirect object → no agreement.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "se sont téléphonés",
+        "ont téléphoné",
+        "se ont téléphoné"
+      ],
+      "strict": true,
+      "allowSpot": true,
+      "phonetic": "sə sɔ̃ telefone"
+    },
+    {
+      "id": "reflexive_se_rencontres",
+      "chunk": "se sont rencontrés",
+      "word": "se sont rencontrés",
+      "translation": "met each other",
+      "example": "Ils se sont rencontrés à Paris.",
+      "example_translation": "They met in Paris.",
+      "cloze": "Ils ___ à Paris.",
+      "tiles": [
+        "Ils",
+        "se",
+        "sont",
+        "rencontrés",
+        "à",
+        "Paris"
+      ],
+      "distractor_tiles": [
+        "ont",
+        "rencontré"
+      ],
+      "notes": "Rencontrer quelqu'un → direct object → agreement: rencontrés.",
+      "tags": [
+        "B1"
+      ],
+      "wrong": [
+        "se sont rencontré",
+        "ont rencontré",
+        "s'ont rencontrés"
+      ],
+      "strict": true,
+      "allowSpot": true,
+      "phonetic": "sə sɔ̃ ʁɑ̃kɔ̃tʁe"
+    }
+  ]
+}
