@@ -65,3 +65,32 @@ Gabarit (remplace `[STATE]`) :
 ## Comment me les donner
 
 Soit tu me les joins dans la conversation, soit tu les ajoutes dans `public/art/` sur `main` (GitHub : Add file → Upload files) avec **exactement** les noms ci-dessus. Je m'occupe ensuite de les intégrer (sprites des lingots, écran d'accueil, icône PWA) et de les optimiser en poids.
+
+---
+
+## V2 — direction « mascotte kawaii animée » (remplace la section 1)
+
+Le premier test (barre de métal réaliste et texturée) est une bonne image, mais **hors direction** : trop réaliste et trop sérieuse pour un jeu qu'on veut attachant. Nouveau parti pris : **le lingot est un petit personnage**.
+
+**Principe technique : 2 images au lieu de 5, et le visage est dessiné par le code.**
+- Le corps est généré **sans visage** (grande face avant lisse et vide). Les yeux et la bouche sont dessinés en SVG par l'app : ils clignent, sourient quand on réussit, font la grimace quand on rate, et restent parfaitement cohérents.
+- Deux corps seulement : `ingot_cold.png` (acier froid) et `ingot_hot.png` (incandescent). L'app les fond l'un dans l'autre selon la chaleur, et ajoute lueur et étincelles. Les 5 paliers se distinguent par ces effets, pas par 5 images à garder cohérentes.
+
+**Phrase d'ancrage V2** (remplace l'ancienne) :
+
+> Cute kawaii game-asset illustration, thick clean dark-navy outline, soft cel shading with two tones, rounded chunky squat shapes, small highlight glints, limited palette of steel blue-grey, ember orange (#ff6b35) and warm gold (#ffd166), plain flat background, no text, no logo, no watermark.
+
+**Corps du lingot** (même prompt, seule la matière change) :
+
+> [ANCHOR V2] A chunky rounded metal ingot mascot, bevelled trapezoid shape with soft rounded edges, large smooth blank front face with NO eyes, NO mouth and NO face, three-quarter front view, centered with generous margin, [STATE].
+
+| Fichier | `[STATE]` |
+|---|---|
+| `ingot_cold.png` | cold steel blue-grey metal, matte, small pale highlight glints |
+| `ingot_hot.png` | glowing incandescent orange-gold metal, bright warm core, tiny sparks around it |
+
+Format identique : PNG fond transparent, 1024 × 512, **même cadrage, même taille, même angle** sur les deux (c'est ce qui permet le fondu).
+
+**À éviter :** un visage généré dans l'image (on le dessine nous-mêmes), des bras/jambes (ça complique l'animation), du texte.
+
+La scène de la forge et l'icône (sections 2 et 3) restent valables : remplace seulement la phrase d'ancrage par la V2 pour qu'elles soient de la même famille.
